@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entidades Principales de la Web</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      img {
+        max-width: 100%;
+      }
+      table {
+        width: 100%;
+      }
+      thead {
+        text-align: left;
+      }
+      th {
+        border-bottom: 1px solid #f3f3f3;
+      }
+
+    </style>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Entidades Principales de la Web
+D.P.O.I.
+
+---
+
+# ENTIDADES PRINCIPALES
+
+![](entities.png)
+
+---
+
+# UNIFORM RESOURCE IDENTIFIER (URI)
+
+- Una URI es una cadena de caracteres que identifica un recurso abstracto o físico.
+- Esta definido en RFC 2396
+- Se puede subdividir en:
+ - Uniform Resource Locator (URL)
+ - Uniform Resource Name (URN)
+
+---
+
+# URI - FORMATO
+
+- El formato de la URI es dependiente del esquema:
+
+ `<scheme>:<scheme-specific-part>`
+
+- Sin embargo, un subconjunto de URI comparte una estructura en común:
+
+ `<scheme>://<authority><path>?<query>`
+
+---
+
+# URI - EJEMPLOS
+
+- ftp://username:password@ftp.is.co.za/rfc/rfc1808.txt
+- http://www.math.uio.no/faq/compression-faq/part1.html
+- mailto:mduerst@ifi.unizh.ch
+- telnet://melvyl.ucop.edu/
+- file:///C:/Documents%20and%20Settings/dpoi/Desktop/Web2.0.txt
+
+---
+
+# URL - HTTP
+
+- http://www.dpoi.com.ar:80/foo/search?q=pepe
+ - Schema (http)
+ - Server: (www.dpoi.com.ar)
+ - Port (80)
+ - Path (foo)
+ - File Name (search)
+ - Query String (q=pepe)
+
+---
+
+# URL - ENCODING
+
+- URLs can only be sent over the Internet using the ASCII character-set.
+- If a URL contains characters outside the ASCII set, the URL has to be converted.
+- URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
+- URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
+- URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
+
+---
+
+# URL - HTTP
+
+- Una URL puede ser:
+ - Absoluta: Describe el path completo del recurso
+ - Relativa: Describe la ubicación de un recurso relativo al un contexto.
+
+
+| Recurso | URL Absoluta | URL Relativa |
+|---------|--------------|--------------|
+| index.html | www.site.com/web/index.html | index.html |
+| image.gif | www.site.com/web/images/image/gif | images/image.gif |
+| data.html | www.site.com/info/data.html | ../info/data.html |
+
+---
+
+# HTTP SERVER - MULTITHREADING
+
+![](server.png)
+
+---
+
+# HYPERTEXT TRANSFER PROTOCOL (HTTP)
+
+- Es un protocolo de nivel de aplicación utilizado para cargar recursos
+- Orientado a documentos
+- Es un protocolo “stateless”
+- Definido en el RFC 2616
+- Basado en ASCII
+- El port default es el 80 y para HTTPS 443
+
+---
+
+# HTTP - FORMATO DE LOS MENSAJES
+
+- Formato de los mensajes
+ - START_LINE `<CRLF>`
+ - MESSAGE_HEADER `<CRLF>`
+ - `<CRLF>`
+ - MESSAGE_BODY
+
+---
+
+# HTTP - REQUEST
+
+```http
+GET /index.html HTTP/1.1[CRLF]
+Host: www.google.com[CRLF]
+Connection: close[CRLF]
+Accept-Encoding: gzip[CRLF]
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5[CRLF]
+Accept-Language: en-us,en;q=0.5[CRLF]
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7[CRLF]
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.8) Gecko/20050511 Firefox/1.0.4 Web-Sniffer/1.0.24[CRLF]
+[CRLF]
+```
+
+???
+
+telnet www.google.com 80
+GET /index.html HTTP/1.1
+Host: www.google.com
+
+Secure Shell, commonly known as SSH, and Telnet are two network protocols that have been used widely at one point in time or another. They are both used to connect to remote servers in order to facilitate some sort of communications. The primary difference, which also led to one superseding the other, is in security. SSH offers security mechanisms that protect the users against anyone with malicious intent while Telnet has no security measures whatsoever.
+Telnet was designed to work within a private network and not across a public network where threats can appear. Because of this, all the data is transmitted in plain text, including passwords. This is a major security issue and the developers of SSH used encryptions to make it harder for other people to sniff the password and other relevant information. Telnet also omits another safety measure called authentication. This ensures that the source of the data is still the same device and not another computer. Without authentication, another person can intercept the communication and do what he wishes. This is also addressed in SSH as it uses a public key to authenticate the source of the data.
+
+---
+
+# HTTP - REQUEST
+
+| Método | Descripción |
+|--------|-------------|
+| GET    | Carga el document especificado en la URL. Esta operación debería ser idempotente |
+| POST   | Envía datos para ser procesados a la URL especificada |
+| HEAD   | Carga meta información  sobre el documento especificado en la URL |
+| PUT    | Almacena el documento especificado en la URL |
+| DELETE | Borra el recurso especificado |
+
+---
+
+# HTTP - RESPONSE
+
+```http
+HTTP/1.1 200 OK [CRLF]
+Cache-Control: private[CRLF]
+Content-Type: text/html [CRLF]
+Server: GWS/2.1[CRLF]
+Content-Length: 1562[CRLF]
+Date: Tue, 14 Mar 2020 00:53:48 GMT[CRLF]
+[CRLF]
+<html>
+.
+.
+</html>
+```
+
+---
+
+# HTTP - RESPONSE CODES
+
+| Code |   Meaning    | Example |
+| -----|--------------|---------|
+| 1xx  | Information  | 100=server agrees to handle client’s request |
+| 2xx  | Success | 200=request succeeded |
+| 3xx  | Redirection | 301=Page Moved, 304=page cache still valid |
+| 4xx  | Client Error | 401=Unauthorized, 404= Page not found |
+| 5xx  | Server Error | 500= Internal Server Error |
+
+---
+
+# HTTP REQUEST HEADERS
+
+| Header | Details |
+|--------|---------|
+| Date | The Date general-header field represents the date and time at which the message was originated, having the same semantics as orig-date in RFC 822. |
+| Expires | The Expires entity-header field gives the date/time after which the response is considered stable |
+| Content-Length | The Content-Length entity-header field indicates the size of the entity-body in bytes. |
+| Content-Type | The Content-Type entity-header field indicates the media type of the entity-body sent to the recipient |
+| Accept-Charset | The Accept-Charset request-header field can be used to indicate what character sets are acceptable for the response. |
+
+???
+
+Headers list: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+---
+
+# HTTP REQUEST HEADERS
+
+| Header | Details |
+|--------|---------|
+| Host | The Host request-header field specifies the Internet host and port number of the resource being requested, as obtained from the original URI given by the user or referring resource (generally an HTTP URL) |
+| User-Agent | The User-Agent request-header field contains information about the user agent originating the request. |
+| If-Modified-Since | The If-Modified-Since request-header field is used with a method to make it conditional: if the requested variant has not been modified since the time specified in this field, an entity will not be returned from the server; instead, a 304 (not modified) response will be returned without any message-body. |
+| Accept-Encoding | The Accept-Encoding request-header field is similar to Accept, but restricts the content-codings that are acceptable in the response. |
+
+???
+
+Headers list: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+---
+
+# HTTP - COOKIES
+
+- Definida en el RFC 2109
+- Son un mecanismo para lograr conexiones HTTP “stateful”.
+- Se logra por medio de dos header HTTP:
+ - `Set-Cookie: CUSTOMER=DAOO; path=/; expires=Thursday, 11-Jun-2020 23:12:40 GMT`
+ - `Cookie: CUSTOMER=DAOO; ANOTHER_COOKIE_KEY=ANOTHER_COOKIE_VALUE`
+- Existen dos tipos de cookies:
+ - Session
+ - Persistent
+
+---
+
+# HTTP - MEJORAS EN LA VERSIÓN 1.1
+
+- Faster response, by allowing multiple transactions to take place over a single persistent connection.
+- Faster response and great bandwidth savings, by improving cache support.
+- Faster response for dynamically-generated pages, by supporting chunked encoding, which allows a response to be sent before its total length is known.
+- Efficient use of IP addresses, by allowing multiple domains to be served from a single IP address. (Host Header).
+
+???
+
+Key Differences between HTTP/1.0 and HTTP/1.1: http://www8.org/w8-papers/5c-protocols/key/key.html
+
+---
+
+# LINKS Y BIBLIOGRAFÍA
+
+- http://www.jmarshall.com/easy/http/#whatis
+- http://web-sniffer.net/
+- Computer Networks, Fourth Edition (Andrew S. Tanenbaum )
+- URI RFC (http://www.ietf.org/rfc/rfc2396.txt)
+- HTTP 1.1 RFC (http://www.w3.org/Protocols/rfc2616/rfc2616.html)
+- HTTP State Management Mechanism RFC (http://www.faqs.org/rfcs/rfc2109.html)
+
+
+
+    </textarea>
+    <script>
+      var slideshow = remark.create({navigation: {scroll: false,}});
+    </script>
+  </body>
+</html>

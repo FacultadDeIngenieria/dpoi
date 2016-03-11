@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      img {
+        max-width: 100%;
+      }
+      table {
+        width: 100%;
+      }
+      thead {
+        text-align: left;
+      }
+      th {
+        border-bottom: 1px solid #f3f3f3;
+      }
+
+    </style>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# HTML
+D.P.O.I.
+
+---
+
+# HTML - Introducción
+
+- HTML significa Hyper Text Markup Language
+- HTML es un caso particular de SGML (Standard Generalized Markup Language)
+- Un archivo HTML es un archivo de texto que contiene markup tags
+- Cada tag HTML describe cierta parde del documento
+
+---
+
+# HTML - Elements
+
+- `<h1>Example</h1>`
+- Partes:
+ - Element: `<h1>Example</h1>`
+ - Opening Tag: `<h1>`
+ - Element Content: Example
+ - Closing Tag: `</h1>`
+ - Element Type: H1
+
+---
+
+# HTML - Elements Content
+
+- En caso que no se lo especifique, solo es posible usar caracteres ASCII.
+ - Para definir el charset encoding usamos el header: `Content-Type: text/html; charset=utf-8`
+ - Tambien ser puede definir un default usando el meta tag: `<meta charset="UTF-8">`
+- Algunos caracteres deben ser 'escapeados':
+ - `>:   & gt;`
+ - `&:   & amp;`
+ - `<:   & lt;`
+ - Space:   & nbsp;
+- Espacios y retornos de carro son ignorados.
+
+???
+
+http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php
+
+---
+
+# HTML - Atributos
+
+- Los tags poseen atributos. Estos atributos pueden brindar información adicional sobre los elementos del documento HTML
+- Siempre aparecen en relación de nombre - valor con el formato: name=“value”
+- Deben ser agregados al tag de inicio del elemento HTML
+- Ejemplo:
+```html
+<div class="info-panel">
+```
+
+---
+
+# HTML - ¿Comillas dobles o simples?
+
+- Los valores asignados a los atributos de un tag tienen que estar contenidos entre comillas
+- Por lo general se usan comillas dobles ("), pero también se puede usar comillas simples (')
+- En el caso que el valor del atributo contenga comillas dobles, es necesario usar comillas simples para definir el valor. Por ejemplo: name='Ariel "Burrito" Ortega'
+
+---
+
+# HTML - Doctype
+
+- Ayuda al browser a interpretar el documento
+
+
+- HTML5:
+ - `<!DOCTYPE html>`
+- HTML 4.01:
+ - `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">`
+- XHTML 1.0:
+ - `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`
+
+---
+
+# HTML - Ejemplo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p class="panel">This is another paragraph with a css class attribute.</p>
+  </body>
+</html>
+```
+
+---
+
+# HTML - Convenciónes
+
+- Tags en lowercase
+- Atributos con comillas, si es posible dobles (")
+- Cerrar los tags
+
+---
+
+# XHTML
+
+- EXtensible HyperText Markup Language
+- Pensado para reemplazar al HTML
+- Es casi idéntico al HTML 4.01
+- Es una versión más estricta y limpia del HTML
+- Es HTML definido como una aplicación XML
+- Es la recomendación de la W3C
+- Todas las últimas versiones de browsers lo soportan
+
+---
+
+# XHTML
+
+- Existen demasiadas páginas HTML malformadas, lo cual hace que la tecnología de un browser mucho más compleja
+- XML es un lenguaje de markup en el cual todo tiene que estar en su lugar y en su forma
+- XML fue diseñado para describir datos, mientras que el HTML para mostrarlos
+- Lograr una versión de HTML la cual sea extensible, sin la necesidad de DTD.
+
+---
+
+# XHTML
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+    <title>This is bad HTML</title>
+	</head>
+   <body>
+	    <br>
+      <h1>Bad HTML</h1>
+   </body>
+</html>
+```
+
+---
+
+# HTML VS. XHTML
+
+- Los elementos tienen que estar correctamente anidados
+- Los documentos XHTML tiene que ser “Well Formed”
+- Los nombres de los tags siempre son en minúsculas
+- Todos los elementos del XHTML tienen que estar cerrados
+
+---
+
+# XHTML
+
+- Los atributos deben estar en minúsculas
+- El valor de los atributos debe estar contenido entre comillas dobles
+- El atributo id reemplaza al atributo name
+- Se debe incluir el namespace ‘http://www.w3.org/1999/xhtml’ en el tag html
+
+---
+
+# XHTML - Ejemplo
+
+```html
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Title goes here</title>
+  </head>
+  <body>
+    Body text goes here
+  </body>
+</html>
+```
+
+---
+
+# XHTML - DOCUMENT TYPE STRICT
+
+- Usado en conjunto con CSS.
+- No permite usar tags relacionados a la presentación del documento
+- `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">`
+
+---
+
+# XHTML - DOCUMENT TYPE TRANSITIONAL
+
+- Utilizado cuando se busca soportar browsers que no sean compatible con CSS.
+- Permite el uso de tags relacionados con la presentación
+- `<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN“"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`
+
+---
+
+# XHTML - DOCUMENT TYPE FRAMESET
+
+- Utilizado cuando se desea hacer uso de frames.
+- `<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN“"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">`
+
+---
+
+# XHTML 1.1
+
+- Es básicamente igual a XHTML 1.0 en lo que respecta al uso.
+- A diferencia de XHTML 1.0, solo posee un solo flavor. El mismo es casi equivalente al strict de XHTML 1.0
+- `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">`
+
+---
+
+# LINKS Y BIBLIOGRAFÍA
+
+- http://www.w3schools.com/html/default.asp
+- http://www.w3.org/TR/html4/
+- http://www.w3schools.com/html/
+- http://www.w3schools.com/tags/
+- HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
+- http://www.web-source.net/html_codes_chart.htm
+- http://www.w3.org/TR/xhtml1/
+- http://www.w3schools.com/tags/
+- http://validator.w3.org/
+
+
+    </textarea>
+    <script>
+      var slideshow = remark.create({navigation: {scroll: false,}});
+    </script>
+  </body>
+</html>
