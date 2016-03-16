@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entidades Principales de la Web</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 65%;
+      }
+      table {
+        width: 100%;
+      }
+      thead {
+        text-align: left;
+      }
+      th {
+        border-bottom: 1px solid #f3f3f3;
+      }
+
+      .inline-img img {
+        width: 42%;
+        float: right;
+        padding-left:20px
+      }
+
+    </style>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# CSS
+D.P.O.I.
+
+---
+
+# CSS
+
+- Cascading Style Sheets
+- Trabaja con HTML y otros lenguajes de markup controlando la manera en que se presenta el contenido
+
+---
+
+# Cascade Order
+
+- Inline Style (inside (X)HTML element)
+- Internal Style Sheet (inside the <head> element)
+- External Style Sheet
+- Browser defaults
+
+---
+
+# Inline Style
+
+- Tratar de evitarlo
+- En contra del propósito de CSS
+
+```html
+<p style="color: #ff0000;">
+  Some red text
+</p>
+```
+
+---
+
+# Internal Style Sheet
+
+- Útil para sobrescribir un estilo particular
+- Para evitar la carga de un css externo
+- Usar en el HEAD para evitar repaints
+
+```html
+<head>
+  <title></title>
+  <style type=”text/css”>
+  	/* CSS Content goes here... */
+  </style>
+</head>
+```
+
+---
+
+# External Style Sheet
+
+- Referencia a un archivo externo donde se definen los estilos
+- __Se puede re-utilizar__
+- Separar contenido de la presentación
+
+```html
+<head>
+	<title></title>
+	<link rel=”stylesheet” type=”text/css” href=”style.css”/>
+</head>
+```
+
+---
+
+# Syntax
+
+![](syntax.png)
+
+
+```css
+/* Combining selector: */
+h1, h2, h3, h4, h5, h6 {
+	color: #009900;
+	font-family: Georgia, sans-serif;  /* Comment */
+}
+
+/*
+  Multi-line comment
+  Doble slash ('//') not allowed
+*/
+```
+
+---
+
+# Herencia
+
+- El elemento anidado puede heredar propiedades asignadas al elemento que lo contiene
+- El elemento anidado puede sobre escribir esas propiedades:
+```css
+body { font-family: Verdana, serif; }
+h1   { font-family: Georgia, sans-serif; }
+h2   { font-family: Tahoma, serif; }
+```
+- Algunas propiedades no son heredadas:
+```css
+body { margin: 20px; }
+```
+- Hay propiedades que toman el valor *inherit* para dar prioridad al valor de su padre:
+```css
+p { color: #000; }
+p a:link { color: inherit; }
+```
+
+---
+
+class: center
+
+# Document Tree
+
+![](dom.png)
+
+---
+
+class: center
+
+# Document Tree
+
+![](dom-ancestor.png)
+
+---
+
+class: center
+
+# Document Tree
+
+![](dom-descendant.png)
+
+---
+
+class: center
+
+# Document Tree
+
+![](dom-parent-child.png)
+
+---
+
+class: center
+
+# Document Tree
+
+![](dom-sibling.png)
+
+---
+
+# Type Selector
+
+- Aplican el estilo a todos los elemenos (X)HTML de la página con el mismo selector
+- No importa su posición dentro del document tree
+```css
+em { color: blue; }
+```
+
+.center[![](dom-type-selector.png)]
+
+---
+
+# ID Selector
+
+- Identifican un elemento (X)HTML con un atributo ID
+- No importa su posición dentro del document tree
+- Debería ser univoco
+
+```css
+#navigation { width: 12em; color: #333; }
+
+div#navigation { width: 12em; color: #333; }
+```
+
+---
+
+# Class Selector
+
+- Puede ser usado en cualquier elemento (X)HTML que posea el atributo class
+- No importa su posición dentro del document tree
+- No deben reemplazar los tags (X)HTML (a.k.a. classitis)
+- Antes de usar un class selector preguntarse:
+ - ¿Existe algún elemento (X)HTML que pueda usar?
+ - ¿Existe algún class o id con mayor jerarquía que puedo usar?
+
+
+ ```css
+ /* affects p and li */
+ .big { font-size: 110%; }
+ /* affects p only */
+ p.big { font-weight: bold; }
+ ```
+
+ ```html
+ <p class="big">Selectors:</p>
+ <ul>
+   <li>Can be simple</li>
+   <li class="big">Or combined</li>
+ </ul>
+ ```
+
+???
+
+Classitis: The practice of authoring stylesheets with redundant and semantically unhelpful classes.
+
+---
+
+# Child Selectors
+
+- Selecciona el elemento hijo para un elemento padre
+- Solo se aplica a hijos y no a los demás descendientes
+
+```css
+div > em { color: blue; }
+div>em { color: blue; }
+```
+
+.inline-img[![](dom-child-selector.png)]
+
+```html
+<body>
+  <h1>Heading <em>text</em></h1>
+  <div>
+    This is some <em>text</em>
+    <p>Paragraph of <em>text</em></p>
+  </div>
+</body>
+```
+
+---
+
+# Descendant Selectors
+
+- Selecciona todos los elementos descendientes de otro elemento en el document tree:
+
+```css
+ul em {color: blue; }
+```
+
+.inline-img[![](dom-descendant-selector.png)]
+
+```html
+<body>
+  <p>
+    Lorem ipsum dolor <em>sit</em> amet.
+  </p>
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li><em>item 3</em></li>
+  </ul>
+</body>
+```
+
+---
+
+# Pseudo-classes
+
+- Permiten dar formato a elementos que no se encuentran en el document tree:
+ - :first-child
+ - :link
+ - :visited
+ - :hover
+ - :active
+ - :focus
+
+```css
+a:link, a:visited { color: blue; }
+
+a:hover, a:active { color: red; }
+```
+
+---
+
+# Pseudo-elements
+
+- Permiten dar formato a información que no se encuentran en el document tree.
+ - ::first-line
+ - ::first-letter
+ - ::before
+ - ::after
+
+```css
+p::first-line { font-weight: bold; }
+
+p::first-letter { font-size: 200%; font-weight: bold; }
+
+p::before { content: "Insert before p"; }
+```
+
+???
+
+After and before: https://css-tricks.com/almanac/selectors/a/after-and-before/
+
+---
+
+class: center
+
+# Layout: The Box Model
+
+![](layout-box-model.png)
+
+---
+
+# Layout: display inline
+
+- El display default de los elementos (span, em, b, etc)
+- No rompe el flujo de la página (no hay salto de línea)
+- No acepta:
+ - width and height
+ - margin and padding SOLO horizontalmente
+- Comportamiento default del tag __span__
+
+![](layout-display-inline.png)
+
+---
+
+# Layout: display inline-block
+
+- Igual al inline, pero acepta width and height
+- Comportamiento default del tag __img__
+
+![](layout-display-inline-block.png)
+
+---
+
+# Layout: display block
+
+- Por defecto, si no se especifica un width, toma todo el ancho posible
+- Elementos de tipo block por default: div, section, ul, p, h1
+
+![](layout-display-block.png)
+
+---
+
+# Layout: position static
+
+- Todos los elementos tiene posición estática por defecto
+- Estan en el flujo normal de la página
+- No acepta las propiedades: left, right, top, bottom, z-index
+- Nunca se especifica excepto que se quiera sobre escribir
+
+---
+
+# Layout: position relative
+
+- Como static, el elemento se mantiene en el flujo normal de la página
+- Ahora si son afectados por: left, right, top, bottom, z-index
+- Tambien afecta a la posición de sus hijos
+
+.center[![](layout-position-relative.png)]
+
+---
+
+# Layout: position absolute/fixed
+
+- El elemento sale del flujo de la página, el resto de los elementos se van a comportar como si no estuviera
+- Se puede especificar entonces su posicion exacta relativa al documento
+- Para que sea relativa al view-port usar __position: fixed__
+
+.center[![](layout-position-absolute.png)]
+
+---
+
+# Layout: using float
+
+![](layout-float.png)
+
+---
+
+class: center
+
+# Layout: overflow visible
+
+![](layout-overflow-visible.png)
+
+---
+
+class: center
+
+# Layout: overflow visible
+
+![](layout-overflow-visible-2.png)
+
+---
+
+class: center
+
+# Layout: overflow hidden
+
+![](layout-overflow-hidden.png)
+
+---
+
+class: center
+
+# Layout: overflow scroll
+
+![](layout-overflow-scroll.png)
+
+---
+
+class: center
+
+# Layout: overflow auto
+
+![](layout-overflow-auto.png)
+
+---
+
+# LINKS Y BIBLIOGRAFÍA
+
+- http://css-tricks.com/
+- http://www.cssbasics.com/
+- http://css.maxdesign.com.au/selectutorial/index.htm
+- HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
+- http://jigsaw.w3.org/css-validator/
+
+
+    </textarea>
+    <script>
+      var slideshow = remark.create({navigation: {scroll: false,}});
+    </script>
+  </body>
+</html>
