@@ -2,6 +2,7 @@
 # Práctica 2: CSS
 
 Darle estilo a las páginas del TP1 sobre (X)HTML:
+
 1. Crear *theme.css* para darle un estilo general a la páginas (títulos, inputs, botones, links, listados, tablas, etc).
 2. Crear *style.css* para alinear los labels e inputs del formulario (como si fuera una tabla).
 3. Crear *print.css* con `media="print"` que esconda el título y la lista de navegación.
