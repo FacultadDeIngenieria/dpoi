@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 65%;
+      }
+      table {
+        width: 100%;
+      }
+      thead {
+        text-align: left;
+      }
+      th {
+        border-bottom: 1px solid #f3f3f3;
+      }
+
+      .inline-img img {
+        width: 42%;
+        float: right;
+        padding-left:20px
+      }
+
+    </style>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# JS
+D.P.O.I.
+
+---
+
+# JS
+
+- JavaScript es un script lenguaje creado por Netscape a fines de 1995.
+- Su propósito inicial fue el de agregar interactividad a una página HTML.
+- Aunque su nombre confunde no esta relacionado con Java. Fue básicamente una estrategia de mercado entre Mozilla y Sun.
+- Estandarizado en 1997 por Ecma International bajo el nombre de Ecmascript.
+- La versión más soportada hasta el momento es la ECMA-262 edición 5.1 (ES5).
+- ES6 compatibility: https://kangax.github.io/compat-table/es6/.
+
+---
+
+# LANGUAGE PARADIGM
+
+- Dynamic.
+- Weakly typed: type definido por valor.
+- Prototype-based: estilo de orientación a objetos.
+- First-class functions: functions as objects.
+
+---
+
+# DATA TYPES
+
+- Number
+- String
+- Boolean
+- Object
+ - Function
+ - Array
+ - Date
+ - RegExp
+- Null
+- Undefined
+
+---
+
+# DATA TYPE: NUMBERS
+
+- Son  números de 64 bits de aritmética de punto flotante (IEEE 754).
+- Todos los operadores numéricos estándares son soportados
+ - `+,-,*,%,/,&, --,++ ,+=, -= , etc`
+- Existe un objeto Math para ejecutar operaciones aritméticas más avanzadas:
+- Math.sin(3.0) + Math.PI
+- Para convertir un String a Number es posible utilizar las funciones
+ - parseInt
+ - parseFloat
+
+
+---
+
+# DATA TYPE: NUMBERS
+
+- También existe un valor especial llamado NaN(Not-a-Number)
+ - `parseInt("dpoi") // NaN`
+- Existe una función built-in que puede ser usada para saber si una variable es NaN
+ `isNaN(myVar)`
+- También existe un valor especial para infinito:
+ - `> 1/0 // Infinity`
+ - `> -1/0 // -Infinity`
+
+---
+
+# Syntax
+
+- Un String en JavaScript es una secuencia de caracteres
+- Los caracteres son Unicode de 16 bits
+- Para comparar Strings puede usarse los operadores: ==,  ===
+- Los String son un tipo especial de objeto:
+
+```javascript
+var str = “Dpoi”;
+str.length // 4
+str.toUpperCase(); // “DPOI”
+```
+
+---
+
+# DATA TYPE: BOOLEAN
+
+- Este tipo modela valores de verdad, con lo cual sus valores son “false” o “true”
+- Los operadores soportados son, !, ||,  &&
+- Variables y literales en un contexto de operación booleana puede ser “verdadero” o false
+ - null, 0, “”,NaN o undefined son falso
+ - Todo es resto es verdadero
+
+---
+
+# DATA TYPE: NULL Y UNDEFINED
+
+El valor null simboliza un valor deliberadamente seteado como “no valor”
+En JavaScript es posible declarar una variable sin asignarle un valor, es ese caso su valor es “undefined”
+
+```javascript
+var myVar;
+myVar == undefined // true
+```
+
+---
+
+# Pitfalls and more...
+
+- Variables, functions, objects, arrays and common pitfalls:
+ http://gnab.github.io/js-workshop
+
+---
+
+# STYLE RECOMENDATIONS
+
+- Es conveniente seguir las mismas reglas utilizadas en Java al momento de declarar variables, funciones, constructores  e indentado de código.
+- Declarar la variables religiosamente con ‘var’. Evitar al máximo el uso de variables globales.
+- Programar “Orientado a Objetos” dentro de los posible
+- Aunque el “;” es opcional como delimitador de sentencias, es recomendable hacer siempre uso del mismo.
+
+---
+
+# INCLUDE
+
+- Existen dos formas de incluir JavaScript en un documento X(HTML)
+ - Inline en el Head o en el Body
+
+```html
+<head>
+  <script type="text/javascript">
+	<![[CDATA[
+      // Code here... (CDATA only fos xhtml)
+	]]>
+  </script>
+</head>
+```
+
+- Cargando una librería JavaScript Externa
+
+```html
+<head>
+  <script type="text/javascript" src="library.js"></script>
+</head>
+```
+
+---
+
+# HOST OBJECTS
+
+- Window: Es el objeto padre en la jerarquía de los Objetos que posee el browser.
+- Document: Provee acceso a los elementos de una página HTML.
+- Navigator: Contiene información sobre el navegador que está siendo usado.
+- History: Información sobre el estado de navegación.
+
+---
+
+# AJAX
+
+- Definición: Asynchronous JavaScript + XML
+- El término fue inventado por James Garrett de Adaptive Path: http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/
+- Es un conjunto de patterns y técnicas acompañadas de varias tecnologías, que permiten a un browser comunicarse con un server en forma asíncrona sin necesidad de refrescar toda la página.
+- Es el motor de lo que se ha dado a llamar __Web 2.0__
+
+---
+
+# DESVENTAJAS DEL MODELO TRADICIONAL
+
+- El nivel de interacción y dinamismo que conocía el usuario era pobre comparado con las aplicaciones desktop
+- Alta latencia en cada una de sus operaciones
+- Esto puede producir usuarios enojados
+
+.center[![](keyboardmadness.gif)]
+
+---
+
+class: center
+
+# Ajax Request
+
+![](ajax-request.png)
+
+---
+
+class: center
+
+# Request
+
+![](ajax-vs-classic.jpg)
+
+---
+
+class: center
+
+# Lifecycle
+
+![](ajax-vs-classic-lifecycle.png)
+
+---
+
+# XMLHttpRequest
+
+- Fue introducido por Internet Explorer como ActiveX y luego agregado como objeto nativo en el resto de los Browsers.
+- Todos los browsers modernos (IE7+, Firefox, Chrome, Safari, and Opera) tiene el objeto XMLHttpRequest object
+
+```javascript
+function some() {
+	var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState === 4) { // 4 = complete
+      console.log(xmlhttp.status); // status code, 200 for "OK"
+      console.log(xmlhttp.responseText); // or responseXML
+    }
+  };
+
+  xmlhttp.open('GET', 'some.xml', true); // method, url, and true for async
+
+  xmlhttp.send(null);  // No data need to send along with the request.
+}
+```
+
+---
+
+# FORMATOS PARA INTERCAMBIO DE DATOS
+
+- Plain Text
+- (X)HTML snippets
+ - Good: no parsing and NO generating the html on the client, just retrieve and replace.
+ - Bad: its not data.
+- XML
+ - Good: most readable and know.
+ - Bad: tedious DOM parsing script.
+- JSON: JavaScript Object Notation
+ - Good: lighter than xml and no parsing needed.
+
+---
+
+# DOM: Document Object Model
+
+- Find
+```javascript
+document.getElementById("element-id");
+document.getElementsByTagName("div");
+document.getElementsByClassName("css-class");
+document.querySelector("div.css-class"); // first
+document.querySelectorAll("div.css-class"); // all
+```
+
+- Modify
+```javascript
+element.innerHTML = "String/HTML";
+// or...
+var div = document.createElement('DIV');
+div.className = "css-class";
+div.addEventListener('click', function(event) { console.log('Clicked'); } );
+element.appendChild(domElem);
+```
+
+---
+
+# DESIGN BEST PRACTICES & TIPS
+
+- No usar AJaX por que si
+- Dar inmediatamente pistas visuales al usuario
+- No cambiar inesperadamente la página
+- Tener en cuenta los tiempos de respuesta promedios de nuestros usuarios
+- Problemas:
+ - Back button (history.push)
+ - Bookmarks
+ - Mucho código puede hacer que el browser se ponga lento
+
+
+    </textarea>
+    <script>
+      var slideshow = remark.create({navigation: {scroll: false,}});
+    </script>
+  </body>
+</html>
