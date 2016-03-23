@@ -7,6 +7,7 @@
 2. [Entidades Principales de la Web](http://facultaddeingenieria.github.io/dpoi/2-Entidades-Principales-de-la-Web/slides.html) (09/03/2016)
 3. [HTML](http://facultaddeingenieria.github.io/dpoi/3-HTML/slides.html) (09/03/2016)
 4. [CSS](http://facultaddeingenieria.github.io/dpoi/4-CSS/slides.html) (16/03/2016)
+5. [JS](http://facultaddeingenieria.github.io/dpoi/5-JS/slides.html) (23/03/2016)
 
 ## Lecturas Adicionales:
 
@@ -18,3 +19,4 @@
 
 1. [HTML](https://github.com/FacultadDeIngenieria/dpoi/blob/master/3-HTML/tp.md) (09/03/2016)
 2. [CSS](https://github.com/FacultadDeIngenieria/dpoi/blob/master/4-CSS/tp.md) (16/03/2016)
+3. [JS](https://github.com/FacultadDeIngenieria/dpoi/blob/master/5-JS/tp.md) (23/03/2016)
