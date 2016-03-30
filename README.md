@@ -14,6 +14,8 @@
 1. Life of a request: http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/ (09/03/2016)
 2. HTML tags: http://www.w3schools.com/tags/ (09/03/2016)
 3. To close or not to close: http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html (16/03/2016)
+4. You much not need jquery: http://youmightnotneedjquery.com (30/03/2016)
+5. DOM events: https://www.smashingmagazine.com/2013/11/an-introduction-to-dom-events/ (30/03/2016)
 
 ## Trabajos Prácticos:
 
