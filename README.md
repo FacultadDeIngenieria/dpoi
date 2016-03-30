@@ -20,3 +20,4 @@
 1. [HTML](https://github.com/FacultadDeIngenieria/dpoi/blob/master/3-HTML/tp.md) (09/03/2016)
 2. [CSS](https://github.com/FacultadDeIngenieria/dpoi/blob/master/4-CSS/tp.md) (16/03/2016)
 3. [JS](https://github.com/FacultadDeIngenieria/dpoi/blob/master/5-JS/tp.md) (23/03/2016)
+4. [JS++](https://github.com/FacultadDeIngenieria/dpoi/blob/master/5-JS/tp2.md) (30/03/2016)
