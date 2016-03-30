@@ -2,6 +2,7 @@
 
 ## Enunciado:
 Completar la funcionalidad del trabajo anterior con el agregado de:
+
 1- Crear: Permitir agregar items a la tabla. Utilizar el servicio `"url":"/api/1.0/create"`. El return de ese método debería ser el object a agregar.
 2- Editar: Permitir editar un item particular. Utilizar el servicio `"url":"/api/1.0/update"`.
 3- Expandir: Permitir visualizar la totalidad de datos de un item particular. Utilizar el servicio `"url":"/api/1.0/view"`.
@@ -16,6 +17,7 @@ Para simular tiempo en la carga de datos, se podrá invocar cualquier servicio c
 
 ## Json:
 Todas las respuestas vienen dadas en formato Json. Desde Javascript se debe:
+
 1- Parsear el resultado,
 2- Chequear el estado,
 3- Actualizar la tabla.

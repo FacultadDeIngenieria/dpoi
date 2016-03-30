@@ -16,6 +16,7 @@ Para simular tiempo en la carga de datos, se podrá invocar `/api/1.0/list_delay
 
 ## Json:
 Todas las respuestas vienen dadas en formato Json. Desde Javascript se debe:
+
 1- Pedir los datos.
 2- Mostrar alguna leyenda o feedback mientras los datos están siendo cargados.
 3- Parsear el resultado.
