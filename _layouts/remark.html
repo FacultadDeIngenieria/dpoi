@@ -55,6 +55,11 @@
       {{ content }}
     </textarea>
     <script>
+      var s = document.getElementById("source");
+      // Hack to fix unwanted markdown start characters inserted by jekyll
+      if(s.innerHTML.indexOf("class") == 6) {
+          s.innerHTML = s.innerHTML.substring(6);
+      }
       remark.create({navigation: {scroll: false}});
     </script>
   </body>
