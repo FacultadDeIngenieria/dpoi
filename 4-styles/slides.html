@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CSS</title>
-    <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      body {
-        font-family: 'Droid Serif';
-      }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: 400;
-        margin-bottom: 0;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-
-      .inverse {
-        background: #272822;
-        color: #777872;
-        text-shadow: 0 0 20px #333;
-      }
-      .inverse h1, .inverse h2 {
-        color: #f3f3f3;
-        line-height: 0.8em;
-      }
-
-      img {
-        max-width: 100%;
-        max-height: 65%;
-      }
-      table {
-        width: 100%;
-      }
-      thead {
-        text-align: left;
-      }
-      th {
-        border-bottom: 1px solid #f3f3f3;
-      }
-
-      .inline-img img {
-        width: 42%;
-        float: right;
-        padding-left:20px
-      }
-
-    </style>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
-  </head>
-  <body>
-    <textarea id="source">
+---
+title: Css
+layout: remark
+permalink: /styles
+---
 
 class: center, middle, inverse
 
@@ -124,7 +74,7 @@ D.P.O.I.
 
 # Syntax
 
-![](syntax.png)
+![](4-styles/syntax.png)
 
 
 ```css
@@ -167,7 +117,7 @@ class: center
 
 # Document Tree
 
-![](dom.png)
+![](4-styles/dom.png)
 
 ---
 
@@ -175,7 +125,7 @@ class: center
 
 # Document Tree
 
-![](dom-ancestor.png)
+![](4-styles/dom-ancestor.png)
 
 ---
 
@@ -183,7 +133,7 @@ class: center
 
 # Document Tree
 
-![](dom-descendant.png)
+![](4-styles/dom-descendant.png)
 
 ---
 
@@ -191,7 +141,7 @@ class: center
 
 # Document Tree
 
-![](dom-parent-child.png)
+![](4-styles/dom-parent-child.png)
 
 ---
 
@@ -199,7 +149,7 @@ class: center
 
 # Document Tree
 
-![](dom-sibling.png)
+![](4-styles/dom-sibling.png)
 
 ---
 
@@ -211,7 +161,7 @@ class: center
 em { color: blue; }
 ```
 
-.center[![](dom-type-selector.png)]
+.center[![](4-styles/dom-type-selector.png)]
 
 ---
 
@@ -270,7 +220,7 @@ div > em { color: blue; }
 div>em { color: blue; }
 ```
 
-.inline-img[![](dom-child-selector.png)]
+.inline-img[![](4-styles/dom-child-selector.png)]
 
 ```html
 <body>
@@ -292,7 +242,7 @@ div>em { color: blue; }
 ul em {color: blue; }
 ```
 
-.inline-img[![](dom-descendant-selector.png)]
+.inline-img[![](4-styles/dom-descendant-selector.png)]
 
 ```html
 <body>
@@ -353,7 +303,7 @@ class: center
 
 # Layout: The Box Model
 
-![](layout-box-model.png)
+.max-height-img[![](4-styles/layout-box-model.png)]
 
 ---
 
@@ -366,7 +316,7 @@ class: center
  - margin and padding SOLO horizontalmente
 - Comportamiento default del tag __span__
 
-![](layout-display-inline.png)
+![](4-styles/layout-display-inline.png)
 
 ---
 
@@ -375,7 +325,7 @@ class: center
 - Igual al inline, pero acepta width and height
 - Comportamiento default del tag __img__
 
-![](layout-display-inline-block.png)
+![](4-styles/layout-display-inline-block.png)
 
 ---
 
@@ -384,7 +334,7 @@ class: center
 - Por defecto, si no se especifica un width, toma todo el ancho posible
 - Elementos de tipo block por default: div, section, ul, p, h1
 
-![](layout-display-block.png)
+![](4-styles/layout-display-block.png)
 
 ---
 
@@ -403,7 +353,7 @@ class: center
 - Ahora si son afectados por: left, right, top, bottom, z-index
 - Tambien afecta a la posición de sus hijos
 
-.center[![](layout-position-relative.png)]
+.center[![](4-styles/layout-position-relative.png)]
 
 ---
 
@@ -413,13 +363,13 @@ class: center
 - Se puede especificar entonces su posicion exacta relativa al documento
 - Para que sea relativa al view-port usar __position: fixed__
 
-.center[![](layout-position-absolute.png)]
+.center[.max-height-img[![](4-styles/layout-position-absolute.png)]]
 
 ---
 
 # Layout: using float
 
-![](layout-float.png)
+![](4-styles/layout-float.png)
 
 ---
 
@@ -427,7 +377,7 @@ class: center
 
 # Layout: overflow visible
 
-![](layout-overflow-visible.png)
+.max-height-img[![](4-styles/layout-overflow-visible.png)]
 
 ---
 
@@ -435,7 +385,7 @@ class: center
 
 # Layout: overflow visible
 
-![](layout-overflow-visible-2.png)
+.max-height-img[![](4-styles/layout-overflow-visible-2.png)]
 
 ---
 
@@ -443,7 +393,7 @@ class: center
 
 # Layout: overflow hidden
 
-![](layout-overflow-hidden.png)
+![](4-styles/layout-overflow-hidden.png)
 
 ---
 
@@ -451,7 +401,7 @@ class: center
 
 # Layout: overflow scroll
 
-![](layout-overflow-scroll.png)
+.max-height-img[![](4-styles/layout-overflow-scroll.png)]
 
 ---
 
@@ -459,7 +409,7 @@ class: center
 
 # Layout: overflow auto
 
-![](layout-overflow-auto.png)
+.max-height-img[![](4-styles/layout-overflow-auto.png)]
 
 ---
 
@@ -470,11 +420,3 @@ class: center
 - http://css.maxdesign.com.au/selectutorial/index.htm
 - HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
 - http://jigsaw.w3.org/css-validator/
-
-
-    </textarea>
-    <script>
-      var slideshow = remark.create({navigation: {scroll: false,}});
-    </script>
-  </body>
-</html>

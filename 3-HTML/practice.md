@@ -1,3 +1,8 @@
+---
+title: Práctica 1 - X(HTML)
+layout: practice
+permalink: /practice/html
+---
 
 # Práctica 1: X(HTML)
 
@@ -17,7 +22,7 @@
 
 4. Una tabla como la detallada a continuación (ver sólo el formato no el estilo, es decir que no va ni alineada ni con borde, si con los íconos):
 
- ![](users.png)
+ ![](/3-html/users.png)
 
 5. Un formulario con secciones para poder ingresar:
  1. Usuario (Nombre, Apellido, Mail, Telefono)

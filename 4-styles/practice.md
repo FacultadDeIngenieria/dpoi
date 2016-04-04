@@ -1,3 +1,8 @@
+---
+title: Práctica 2 - CSS
+layout: practice
+permalink: /practice/styles
+---
 
 # Práctica 2: CSS
 
@@ -7,8 +12,8 @@ Darle estilo a las páginas del TP1 sobre (X)HTML:
 2. Crear *style.css* para alinear los labels e inputs del formulario (como si fuera una tabla).
 3. Crear *print.css* con `media="print"` que esconda el título y la lista de navegación.
 4. Crear dos layouts diferentes para la misma página html:
- 1. *vertital.css* que este centrado y tenga un ancho fijo, con este formato: ![](tp-horizontal.png)
- 2. *horizontal.css* que ocupe todo el ancho de la página, con este formato: ![](tp-vertical.png)
+ 1. *vertital.css* que este centrado y tenga un ancho fijo, con este formato: ![](/4-styles/tp-horizontal.png)
+ 2. *horizontal.css* que ocupe todo el ancho de la página, con este formato: ![](/4-styles/tp-vertical.png)
 
 ## Requisitos:
 - No se permite el uso de tags para presentación.

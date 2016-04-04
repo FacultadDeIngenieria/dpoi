@@ -1,3 +1,9 @@
+---
+title: Práctica 4 - JS++
+layout: practice
+permalink: /practice/js++
+---
+
 # Práctica 4: JS++
 
 ## Enunciado:

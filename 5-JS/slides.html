@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>JS</title>
-    <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      body {
-        font-family: 'Droid Serif';
-      }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: 400;
-        margin-bottom: 0;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-
-      .inverse {
-        background: #272822;
-        color: #777872;
-        text-shadow: 0 0 20px #333;
-      }
-      .inverse h1, .inverse h2 {
-        color: #f3f3f3;
-        line-height: 0.8em;
-      }
-
-      img {
-        max-width: 100%;
-        max-height: 65%;
-      }
-      table {
-        width: 100%;
-      }
-      thead {
-        text-align: left;
-      }
-      th {
-        border-bottom: 1px solid #f3f3f3;
-      }
-
-      .inline-img img {
-        width: 42%;
-        float: right;
-        padding-left:20px
-      }
-
-    </style>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
-  </head>
-  <body>
-    <textarea id="source">
+---
+title: JavaScript
+layout: remark
+permalink: /js
+---
 
 class: center, middle, inverse
 
@@ -224,7 +174,7 @@ myVar == undefined // true
 - Alta latencia en cada una de sus operaciones
 - Esto puede producir usuarios enojados
 
-.center[![](keyboardmadness.gif)]
+.center[![](5-js/keyboardmadness.gif)]
 
 ---
 
@@ -232,7 +182,7 @@ class: center
 
 # Ajax Request
 
-![](ajax-request.png)
+![](5-js/ajax-request.png)
 
 ---
 
@@ -240,7 +190,7 @@ class: center
 
 # Request
 
-![](ajax-vs-classic.jpg)
+![](5-js/ajax-vs-classic.jpg)
 
 ---
 
@@ -248,7 +198,7 @@ class: center
 
 # Lifecycle
 
-![](ajax-vs-classic-lifecycle.png)
+![](5-js/ajax-vs-classic-lifecycle.png)
 
 ---
 
@@ -322,11 +272,3 @@ element.appendChild(domElem);
  - Back button (history.push)
  - Bookmarks
  - Mucho código puede hacer que el browser se ponga lento
-
-
-    </textarea>
-    <script>
-      var slideshow = remark.create({navigation: {scroll: false,}});
-    </script>
-  </body>
-</html>

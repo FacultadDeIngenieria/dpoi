@@ -1,3 +1,9 @@
+---
+title: Práctica 3 - JS
+layout: practice
+permalink: /practice/js
+---
+
 # Práctica 3: JS
 
 ## Enunciado:
