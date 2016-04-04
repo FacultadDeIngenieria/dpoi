@@ -22,7 +22,7 @@ permalink: /practice/html
 
 4. Una tabla como la detallada a continuación (ver sólo el formato no el estilo, es decir que no va ni alineada ni con borde, si con los íconos):
 
- ![](/3-html/users.png)
+ ![](../3-html/users.png)
 
 5. Un formulario con secciones para poder ingresar:
  1. Usuario (Nombre, Apellido, Mail, Telefono)
