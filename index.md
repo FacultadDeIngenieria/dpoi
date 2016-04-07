@@ -28,3 +28,4 @@ title: {{ site.name }}
 2. [CSS](practice/styles) (16/03/2016)
 3. [JS](practice/js) (23/03/2016)
 4. [JS++](practice/js++) (30/03/2016)
+5. [Scrapping](practice/scrapping) (06/04/2016)
