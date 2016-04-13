@@ -3,6 +3,7 @@ title: Práctica 5 - Scrapping
 layout: practice
 permalink: /practice/scrapping
 schema: lanacion-article.schema.json
+bonus: vademecum-product.schema.json
 ---
 
 # Práctica 5: Scrapping
@@ -16,9 +17,19 @@ Utilizar el schema json de "La Nación Article" para extraer información del li
 
 [La Nación Article Schema](../6-scrapping/{{page.schema}})
 
-
-```json
+```javascript
 {% include_relative {{page.schema}} %}
+```
+
+## Bonus
+Utilizar el schema json de "Vademecum Product" para extraer información de la página especificada:
+
+**http://ar.prvademecum.com/producto.php?producto=16362**
+
+[Vademecum Product Schema](../6-scrapping/{{page.bonus}})
+
+```javascript
+{% include_relative {{page.bonus}} %}
 ```
 
 ## Requisitos:
