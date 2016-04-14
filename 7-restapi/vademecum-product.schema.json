@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Vademecum Product",
   "type": "object",
-  "path": "/prvademecum.com/products",
+  "path": "/products",
   "describes": ["title", "laboratory"],
   "properties": {
     "title": {

@@ -9,15 +9,15 @@ schema: vademecum-product.schema.json
 
 ## Enunciado:
 
-1. Extraer información de distintas paginas de manera generica utilizando el schema de scrapping de la practica 5.
-2. Guardar la información json obtenida de forma permanente en una base de datos.
-3. Exponer esos datos a travez de un api rest.
+1. Extraer información de distintas páginas de manera genérica utilizando el schema de scrapping de la práctica 5.
+2. Guardar la información json obtenida de forma permanente en una base de datos (Ej. MongoDB, Cassandra).
+3. Exponer esos datos a través de un api rest.
 
 ## RestApi
 
-Debera exponer los siguientes servicios:
+Deberá exponer los siguientes servicios:
 
-- **GET /** : devuelte el listado de dominios disponibles.
+- **GET /** : devuelve el listado de dominios disponibles.
 
 ```javascript
 GET /
@@ -27,7 +27,7 @@ GET /
 ]
 ```
 
-- **GET /{domain}** : devuelte el listado de paths disponible bajo ese dominio.
+- **GET /{domain}** : devuelve el listado de paths disponible bajo ese dominio.
 
 ```javascript
 GET /prvademecum.com
@@ -36,20 +36,20 @@ GET /prvademecum.com
 ]
 ```
 
-- **GET /{domain}/{path}** : devuelte el listado de documentos disponibles.
+- **GET /{domain}/{path}** : devuelve el listado de documentos disponibles.
 
 ```javascript
 GET /prvademecum.com/products
 [
-   {"url": "/prvademecum.com/products/http://ar.prvademecum.com/producto.php?producto=16362", "name": "IBUPIRAC PFIZER"},
-   {"url": "/prvademecum.com/products/http://ar.prvademecum.com/producto.php?producto=16365", "name": "UNICALM RAFFO"},
+   {"url": "/prvademecum.com/products/ibupirac-pfizer-4021d1d09859fb19394919da043a2ef3", "name": "IBUPIRAC PFIZER"},
+   {"url": "/prvademecum.com/products/unicalm-raffo-9fd637e31956ee1e3c86cf9db90d1100", "name": "UNICALM RAFFO"},
 ]
 ```
 
-- **GET /{domain}/{path}/{url}** : devuelte el documento con todas sus properties.
+- **GET /{domain}/{path}/{slug-sha}** : devuelve el documento con todas sus properties.
 
 ```javascript
-GET /prvademecum.com/products/http://ar.prvademecum.com/producto.php?producto=16362
+GET /prvademecum.com/products/ibupirac-pfizer-4021d1d09859fb19394919da043a2ef3
 {
    "title": "IBUPIRAC",
    "laboratory": "PFIZER",
@@ -58,15 +58,14 @@ GET /prvademecum.com/products/http://ar.prvademecum.com/producto.php?producto=16
 }
 ```
 
-
 ## Schema
 
-Para saber bajo que path y con que nombre guardar los documentos, los schemas deben tener dos nuevos campos: *path* y *describes*:
+Para saber bajo qué path y con qué nombre guardar los documentos, los schemas deben tener dos nuevos campos: *path* y *describes*:
 
 - **path:** indica como se agrupan todos los documentos obtenidos al usar este schema.
 - **describes:** indica que atributos se utilizan para describir el documento.
 
-Ejemplo del nuevo Schema: [Vademecum Product Schema](../7-restapi/{{page.scheme}})
+Ejemplo del nuevo Schema: [Vademecum Product Schema](../7-restapi/{{page.schema}})
 
 ```javascript
 {% include_relative {{page.schema}} %}
