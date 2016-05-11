@@ -26,6 +26,7 @@
 5. [Scrapping](practice/scrapping) (06/04/2016)
 6. [RestApi](practice/restapi) (13/04/2016)
 7. [Visualization](practice/visualization) (04/05/2016)
+8. [Serverless](practice/serverless) (11/05/2016)
 
 ## Facultad de Ingeniería, Universidad Austral
 
