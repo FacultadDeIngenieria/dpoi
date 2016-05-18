@@ -31,13 +31,15 @@
 
 ## Presentaciónes
 
-1. Building: gulp, grunt, bower
+1. Building: gulp, grunt, bower, babel
 2. Loading: Requirejs, commonjs, browserify
-3. Styling: less. sass, scss
+3. Styling: less. sass, scss, bootstrap
 4. Rendering: ReactJs, Angular2
 5. Testing: jasmine, karma, ?
 6. Benchmarking: tools and best practices
-7. Other: Rxjs, ?
+7. HTML5 + CSS + ES6
+8. Other: Rxjs, ?
+9. Frameworks: Play, Nodejs + Express, ?
 
 ---
 
