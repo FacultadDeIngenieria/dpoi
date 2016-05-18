@@ -54,6 +54,7 @@ Crear un juego online para jugar a la batalla naval.
 - A la hora de la entrega, el juego deberá estar hosteado y disponible online.
 - Podrán usarse todas las librerías y servicios SAS que se crean convenientes
   - Ejemplo: storage en SqlDB, MongoDB o DynamoDB...
+- Bonus points: buen código, buen diseño y UX
 
 
 ![Batalla Naval](../10-papoy/paper.jpg)
