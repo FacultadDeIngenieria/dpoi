@@ -27,6 +27,19 @@
 6. [RestApi](practice/restapi) (13/04/2016)
 7. [Visualization](practice/visualization) (04/05/2016)
 8. [Serverless](practice/serverless) (11/05/2016)
+9. [Batalla Naval](practice/papoy) (18/05/2016)
+
+## Presentaciónes
+
+1. Building: gulp, grunt, bower
+2. Loading: Requirejs, commonjs, browserify
+3. Styling: less. sass, scss
+4. Rendering: ReactJs, Angular2
+5. Testing: jasmine, karma, ?
+6. Benchmarking: tools and best practices
+7. Other: Rxjs, ?
+
+---
 
 ## Facultad de Ingeniería, Universidad Austral
 
