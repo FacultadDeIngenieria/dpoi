@@ -33,8 +33,8 @@
 
 1. Building: gulp, grunt, bower, babel (Tomas Battola y Federico Ruiz)
 2. Loading: Requirejs, commonjs, browserify (Franciso Giandomenico y Joaquin Nacht)
-3. Styling: less. sass, scss, bootstrap (Toman Najun y Flor Velarde)
-4. Rendering: ReactJs (Facundo Vertolosso y Santiago Fuentes), Angular 2 (Tomas Vilaboa y Franco Testori), Polymer (Nicolas Burroni y Luciano Sartor)
+3. Styling: less. sass, scss, bootstrap (Tomas Najun y Flor Velarde)
+4. Rendering: ReactJs (Facundo Bertolosso y Santiago Fuentes), Angular 2 (Tomas Vilaboa y Franco Testori), Polymer (Nicolas Burroni y Luciano Sartor)
 5. Testing: jasmine, karma, ?
 6. Benchmarking: tools and best practices
 7. HTML5 + CSS + ES6
