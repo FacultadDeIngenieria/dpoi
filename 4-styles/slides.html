@@ -413,10 +413,254 @@ class: center
 
 ---
 
+# Layout: Flexbox (Flexible Boxes)
+
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+
+---
+
+# Layout: Flexbox (Flexible Boxes)
+
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+
+- El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
+
+---
+
+# Layout: Flexbox (Flexible Boxes)
+
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+
+- El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
+
+- De esta manera nos ayuda a construir responsive web apps agnósticas del dispositivo en que se muestra.
+
+---
+
+# Layout: Flexbox (Flexible Boxes)
+
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+
+- El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
+
+- De esta manera nos ayuda a construir responsive web apps agnósticas del dispositivo en que se muestra.
+
+- Por último, el contenedor es agnóstico de la dirección de los items en comparación de otros layouts.
+  - Block: dirección vertical.
+
+  - Inline: dirección horizontal.
+
+---
+
+# Layout: Flexbox
+
+.center[![Alt Flexbox Description](4-styles/flexbox-description.png)]
+
+???
+Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties.
+
+Some of them are meant to be set on the container whereas the others are meant to be set on the children / items.
+
+Please have a look at this figure from the specification, explaining the main idea behind the flex layout:
+  - main axis: is the primary axis along which flex items are laid out. It is not necessarily horizontal.
+
+  - main start and main end: the items are placed within the container starting from main start and going to main end.
+
+  - cross axis: is the axis perpendicular to the main axis. Its direction depends on the main axis direction.
+
+  - cross start and cross end: flex lines are filled with items and placed into the container starting on the cross start and going toward the cross end side.
+
+---
+
+# Layout: Flexbox
+
+## display
+
+``` css
+.container {
+  display: flex;
+}
+```
+
+???
+
+This defines a flex container. It enables a flex context for all its direct children.
+
+---
+
+# Layout: Flexbox
+
+## flex-direction
+
+``` css
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+```
+
+.center[![Alt flex-direction](4-styles/flex-direction.svg)]
+
+???
+
+This establishes the main-axis, thus defining the direction flex items are placed in the flex container.
+
+---
+
+# Layout: Flexbox
+
+## flex-wrap
+
+``` css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
+
+.center[![Alt flex-wrap](4-styles/flex-wrap.svg)]
+
+???
+
+By default, flex items will all try to fit onto one line.
+
+You can change that and allow the items to wrap as needed with this property.
+
+- nowrap (default): all flex items will be on one line.
+
+- wrap: flex items will wrap onto multiple lines, from top to bottom.
+
+- wrap-reverse: flex items will wrap onto multiple lines from bottom to top.
+
+---
+
+# Layout: Flexbox
+
+## flex-flow
+
+``` css
+.container {
+  flex-flow: <‘flex-direction’> <‘flex-wrap’>;
+}
+```
+
+???
+
+This is a shorthand flex-direction and flex-wrap properties, which together define the flex container's main and cross axes.
+
+Default is row nowrap.
+
+---
+
+# Layout: Flexbox
+
+## justify-content
+
+``` css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+```
+
+.center.mid-width-img[![Alt justify-content](4-styles/justify-content.svg)]
+
+???
+
+This defines the alignment along the main axis.
+
+---
+
+# Layout: Flexbox
+
+## align-items
+
+``` css
+.container {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+.center.mid-width-img[![Alt align-items](4-styles/align-items.svg)]
+
+???
+
+This defines the default behaviour for how flex items are laid out along the cross axis on the current line.
+
+Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).
+
+---
+
+# Layout: Flexbox
+
+## align-content
+
+``` css
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
+
+.center.mid-width-img[![Alt align-content](4-styles/align-content.svg)]
+
+???
+
+This aligns a flex container's lines within when there is extra space in the cross-axis.
+
+Similar to how justify-content aligns individual items within the main-axis.
+
+---
+
+# Layout: Flexbox
+
+## order
+
+``` css
+.item {
+  order: <integer>;
+}
+```
+
+.center.max-width-img[![Alt order](4-styles/order.svg)]
+
+???
+
+By default, flex items are laid out in the source order.
+
+However, the order property controls the order in which they appear in the flex container.
+
+---
+
+# Layout: Flexbox
+
+## align-self
+
+``` css
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+.center[![Alt align-self](4-styles/align-self.svg)]
+
+???
+
+This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
+
+---
+
+class: center
+
+# Flexbox Froggy!
+
+.max-width-img[[![Alt Flexbox challenge](4-styles/froggy-challenge-intro.png)](https://flexboxfroggy.com/)]
+
+---
+
 # LINKS Y BIBLIOGRAFÍA
 
+- HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
 - http://css-tricks.com/
 - http://www.cssbasics.com/
 - http://css.maxdesign.com.au/selectutorial/index.htm
-- HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
 - http://jigsaw.w3.org/css-validator/
+- https://www.w3schools.com/css/
+- https://cvan.io/flexboxin5/
+- https://flexboxfroggy.com/
