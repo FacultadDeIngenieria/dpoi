@@ -415,13 +415,13 @@ class: center
 
 # Layout: Flexbox (Flexible Boxes)
 
-- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño de esos items.
 
 ---
 
 # Layout: Flexbox (Flexible Boxes)
 
-- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño de esos items.
 
 - El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
 
@@ -429,7 +429,7 @@ class: center
 
 # Layout: Flexbox (Flexible Boxes)
 
-- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño de esos items.
 
 - El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
 
@@ -439,7 +439,7 @@ class: center
 
 # Layout: Flexbox (Flexible Boxes)
 
-- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño el tamaño de esos items.
+- Permite diseñar, alinear y distribuir de manera más eficiente el espacio entre elementos en un contenedor sin importar el tamaño de esos items.
 
 - El contenedor puede alterar sus items para poder llenar el espacio disponible de la mejor manera posible, evitando de esta manera overflows.
 
@@ -654,6 +654,86 @@ class: center
 
 ---
 
+# Layout: Grid
+
+``` css
+.container {
+  display: grid;
+}
+```
+
+Al igual que flexbox, hay muchas propiedades del módulo a utilizar:
+
+*display, grid-template-columns, grid-template-rows, grid-template-areas, grid-template, ...*
+
+.center[![Alt align-self](4-styles/grid.png)]
+
+???
+
+CSS Grid Layout is the most powerful layout system available in CSS.
+
+It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system.
+
+As of March 2017, many browsers shipped native, unprefixed support for CSS Grid: Chrome, Firefox, Safari and Opera.
+
+Internet Explorer 10 and 11 on the other hand support it, but it's an old implementation with an outdated syntax.
+
+---
+
+# Grid vs. Flexbox
+
+- Los dos máximos competidores en el campeonato "best-system-to-build-html-layouts"
+
+  - **Nota:** *el nombre del campeonato no es final y puede sufrir variaciones*
+
+---
+
+# Grid vs. Flexbox
+
+- Los dos máximos competidores en el campeonato "best-system-to-build-html-layouts"
+  - **Nota:** *el nombre del campeonato no es final y puede sufrir variaciones*
+
+- Grids se utiliza más para diseñar y construir la estructura principal de la página ("building the bigger picture").
+  - Grids permite diseñar en 2D (filas y columnas).
+
+---
+
+# Grid vs. Flexbox
+
+- Los dos máximos competidores en el campeonato "best-system-to-build-html-layouts"
+  - **Nota:** *el nombre del campeonato no es final y puede sufrir variaciones*
+
+- Grids se utiliza más para diseñar y construir la estructura principal de la página ("building the bigger picture").
+  - Grids permite diseñar en 2D (filas y columnas).
+
+- Flexbox se utiliza más para alinear el contenido interno de los elementos.
+   - Flexbox permite diseñar en una sóla dimensión (filas o columnas).
+
+---
+
+# Grid vs. Flexbox
+
+- Los dos máximos competidores en el campeonato "best-system-to-build-html-layouts"
+  - **Nota:** *el nombre del campeonato no es final y puede sufrir variaciones*
+
+- Grids se utiliza más para diseñar y construir la estructura principal de la página ("building the bigger picture").
+  - Grids permite diseñar en 2D (filas y columnas).
+
+- Flexbox se utiliza más para alinear el contenido interno de los elementos.
+   - Flexbox permite diseñar en una sóla dimensión (filas o columnas).
+
+- **Conclusión**: No hay mucha justificación para usar uno o el otro. Es mejor utilizar ambos.
+
+---
+
+class: center
+
+# Grid Garden!
+
+.max-width-img[[![Alt Grid challenge](4-styles/grid-garden.png)](http://cssgridgarden.com/)]
+
+---
+
 # LINKS Y BIBLIOGRAFÍA
 
 - HTML for the World Wide Web with XHTML and CSS, Elizabeth Castro, Peachpit Press, 2002
@@ -664,3 +744,5 @@ class: center
 - https://www.w3schools.com/css/
 - https://cvan.io/flexboxin5/
 - https://flexboxfroggy.com/
+- http://tutorialzine.com/2017/03/css-grid-vs-flexbox
+- http://cssgridgarden.com/
