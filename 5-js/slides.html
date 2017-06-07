@@ -272,3 +272,930 @@ element.appendChild(domElem);
  - Back button (history.push)
  - Bookmarks
  - Mucho código puede hacer que el browser se ponga lento
+
+---
+
+# Prototypes
+
+- Every object in Javascript has a prototype.
+
+- When a messages reaches an object, JavaScript will attempt to find a property in that object first.
+  - If it cannot find it then the message will be sent to the object’s prototype and so on.
+
+  - This works just like single parent inheritance in a class based language.
+
+![Alt Functional Prog](5-js/proto.png)
+
+---
+
+# Prototypes: `__proto__`
+
+- To understand prototype chains in JavaScript there is nothing as simple as the `__proto__` property.
+
+- Unfortunately `__proto__` is not part of the standard interface of JavaScript, not at least until ES6.
+
+- So you shouldn’t use it in production code.
+
+- But anyway it makes explaining prototypes easy.
+
+```javascript
+var alien = { kind: 'alien' }
+var person = { kind: 'person' }
+var zack = {};
+
+// assign alien as the prototype of zack
+zack.__proto__ = alien
+
+// zack is now linked to alien, it 'inherits' the properties of alien
+console.log(zack.kind); // ‘alien’
+
+// assign person as the prototype of zack
+zack.__proto__ = person
+
+// and now zack is linked to person
+console.log(zack.kind); // ‘person’
+```
+
+---
+
+# Prototypes: `__proto__`
+
+- You can add properties to the prototype of an object at any time.
+- The prototype chain lookup will find the new property as expected.
+
+```javascript
+var person = {}
+var zack = {}
+zack.__proto__ = person
+
+// zack doesn't respond to kind at this point
+console.log(zack.kind); // undefined
+
+// let's add kind to person
+person.kind = 'person'
+
+// now zack responds to kind because it finds 'kind' in person
+console.log(zack.kind); // 'person'
+```
+
+- New or updated properties are assigned to the object, not to the prototype.
+
+```javascript
+zack.kind = 'zack'
+
+console.log(zack.kind); // 'zack'
+
+console.log(person.kind); // 'person'
+```
+
+---
+
+# Prototype: Object.create
+
+- As explained before `__proto__` is not a well supported way of assigning prototypes to objects.
+- So the next simplest way is using Object.create().
+
+```javascript
+var person = {
+  kind: 'person'
+}
+
+// creates a new object which prototype is person
+var zack = Object.create(person);
+console.log(zack.kind); // ‘person’
+```
+
+- You can pass an object to Object.create to add specific properties for the new object.
+
+```javascript
+var zack = Object.create(person, { age: {value: 13} });
+console.log(zack.age); // ‘13’
+```
+
+- You can get the prototype of an object using Object.getPrototypeOf.
+
+```javascript
+var zack = Object.create(person);
+Object.getPrototypeOf(zack); // person
+```
+
+---
+
+# Prototype
+
+- Functions as constructors
+  - In essence functions when used with the keyword new behave like factories, meaning that they create new objects.
+
+```javascript
+function Foo() { this.kind = ‘foo’ }
+var foo = new Foo();
+foo.kind // ‘foo’
+```
+
+- Behind the scenes it is like doing something like this:
+
+```javascript
+function Foo() {
+  var this = {}; // this is not valid, just for illustration
+  this.__proto__ = Foo.prototype;
+  this.kind = ‘foo’
+  return this;
+}
+```
+
+- But keep in mind that the implicit ‘this’ is only assigned to a new object when using ‘new’.
+- If you forget ‘new’ keyword then ‘this’ will be the global object (more on this later).
+
+---
+
+#  Prototype: The ‘function prototype’
+
+- Every function in JavaScript has a special property called ‘prototype’.
+
+- As confusing as it may sound, this ‘prototype’ property is not the real prototype (`__proto__`) of the function.
+  - `__proto__` is the actual object that is used in the lookup chain to resolve methods, etc.
+  - prototype is the object that is used to build `__proto__` when you create an object with new.
+
+```javascript
+function Person(name) { this.name = name; }
+
+// the function person has a prototype property
+// we can add properties to this function prototype
+Person.prototype.kind = ‘person’
+
+// when we create a new object using new
+var zack = new Person(‘Zack’);
+
+// the prototype of the new object points to person.prototype
+zack.__proto__ == Person.prototype // true
+
+// in the new object we have access to properties defined in Person.prototype
+zack.kind // person
+```
+
+---
+
+# This
+
+- From a background like Java, PHP or other standard language, *this* is seen as an instance of the current object in the class method: no more and no less.
+
+- In JavaScript the situation is different: *this* is the current execution context of a function.
+
+- Let's familiarize with a couple of terms:
+  - Invocation of a function is simply calling the function.
+
+  - Context of an invocation is the value of *this* within function body.
+      - For example the invocation of map.set('key', 'value') has the context map.
+
+  - Scope of a function is the set of variables, objects, functions accessible within a function body.
+
+---
+
+# This: Global contexts
+
+- In the global execution context (outside of any function), this refers to the global object.
+
+```javascript
+// In web browsers, the window object is also the global object:
+console.log(this === window); // true
+
+a = 37;
+console.log(window.a); // 37
+
+this.b = "MDN";
+console.log(window.b) //"MDN"
+console.log(b) //"MDN"
+```
+
+---
+
+# This: Function context
+
+- Inside a function, the value of this depends on how the function is called.
+
+- Simple call
+  - Because the value of *this* is not set by the call in the following, *this* will default to the global object.
+
+```javascript
+function f1() {
+  return this;
+}
+
+// In a browser:
+f1() === window; // the window is the global object in browsers
+
+// In Node:
+f1() === global;
+```
+
+---
+
+# This: Function context
+
+- call and apply
+  - Where a function uses the *this* keyword in its body, its value can be bound to a particular object in the call using the call or apply methods which all functions inherit from Function.prototype.
+
+```javascript
+function add(c, d) {
+  return this.a + this.b + c + d;
+}
+
+var o = {a: 1, b: 3};
+
+// The first parameter is the object to use as 'this'
+//subsequent parameters are passed as arguments in the function call
+add.call(o, 5, 7); // 1 + 3 + 5 + 7 = 16
+
+// The first parameter is the object to use as 'this'
+// the second is an array whose members are used as the arguments in the function call
+add.apply(o, [10, 20]); // 1 + 3 + 10 + 20 = 34
+```
+
+---
+
+# This: Function contexts
+
+- The bind method
+  - ECMAScript 5 introduced Function.prototype.bind.
+
+  - Calling f.bind(someObject) creates a new function with the same body and scope as f
+
+      - But where *this* occurs in the original function, in the new function it is permanently bound to the first argument of bind, regardless of how the function is being used.
+
+```javascript
+function f() {
+  return this.a;
+}
+
+var g = f.bind({a: 'azerty'});
+console.log(g()); // azerty
+
+var h = g.bind({a: 'yoo'}); // bind only works once!
+console.log(h()); // azerty
+
+var o = {a: 37, f: f, g: g, h: h};
+console.log(o.f(), o.g(), o.h()); // 37, azerty, azerty
+```
+
+---
+
+# This: As a constructor
+
+- When a function is used as a constructor (with the new keyword), its *this* is bound to the new object being constructed.
+
+```javascript
+function C() {
+  this.a = 37;
+}
+
+var o = new C();
+console.log(o.a); // 37
+```
+---
+
+ # ECMAScript 6
+ ## ES6, ES2015, ES6Harmony, etc.
+
+- Since its release in 1995, JavaScript has gone through many changes.
+
+- At first, it made adding interactive elements to web pages much simpler.
+
+- Then it got more robust with DHTML and AJAX.
+
+- Now, with Node.js, JavaScript has become a language that is used to build full-stack applications.
+
+- The committee that is and has been in charge of shepherding the changes to JavaScript is the European Computer Manufacturers Association (ECMA).
+
+- The most recent major update to the specification was approved in June 2015
+
+  - The most recent update was approved in June 2016 (ES2016).
+
+---
+
+# Declaring Variables in ES6
+
+- Prior to ES6, the only way to declare a variable was with the var keyword. We now have a few different options that provide improved functionality.
+
+- **const**
+  - A constant is a variable that cannot be changed.
+  - Before constants, all we had were variables, and variables could be overwritten.
+
+```javascript
+const pizza = true
+pizza = false
+```
+
+  - An attempt at overwriting a constant will throw "Uncaught TypeError: Assignment to constant variable".
+
+---
+
+# Declaring Variables in ES6
+
+- **let**
+  - In JavaScript, we create code blocks with curly braces ({}).
+
+  - With functions, these curly braces block off the scope of variables.
+
+  - But, if a variable is created inside of an if/else block, that variable is not scoped to the block.
+
+      - Another area where curly braces don’t block off a variable’s scope is in for loops.
+
+```javascript
+var topic = "JavaScript"
+
+if (topic) {
+  var topic = "React"
+  console.log('block', topic)     // block React
+}
+
+console.log('global', topic)      // global React
+```
+
+---
+
+# Declaring Variables in ES6
+
+- **let**
+  - With the let keyword, we can scope a variable to any code block. Using let protects the value of the global variable:
+
+```javascript
+var topic = "JavaScript"
+
+if (topic) {
+  let topic = "React"
+  console.log('block', topic)     // React
+}
+
+console.log('global', topic)      // JavaScript
+```
+
+---
+
+# Template Strings
+
+- Template strings provide us with an alternative to string concatenation.
+
+- They also allow us to insert variables into a string.
+
+- Before:
+
+```javascript
+console.log(lastName + ", " + firstName + " " + middleName)
+```
+
+- Now:
+
+```javascript
+console.log(`${lastName}, ${firstName} ${middleName}`)
+```
+
+- Any JavaScript that returns a value can be added to a template string between the ${ } in a template string.
+
+---
+
+# Template Strings
+
+- Template strings honor whitespace, making it easier to draft up email templates, code examples, or anything else that contains whitespace.
+
+```javascript
+`
+
+   Hello ${firstName},
+
+   Thanks for ordering ${qty} tickets to ${event}.
+
+   Order Details
+     ${firstName} ${middleName} ${lastName}
+     ${qty} x $${price} = $${qty*price} to ${event}
+
+   You can pick your tickets up at will call 30 minutes before
+   the show.
+
+   Thanks,
+
+   ${ticketAgent}
+
+`
+```
+
+---
+
+# Template Strings
+
+- Previously, using an HTML string directly in our JavaScript code was not so easy to do
+
+- We’d need to run it together on one line or concatenate all lines.
+
+- Now that the whitespace is recognized as text, you can insert formatted HTML that is easy to understand:
+
+```javascript
+document.body.innerHTML = `
+<section>
+  <header>
+      <h1>The HTML5 Blog</h1>
+  </header>
+  <article>
+      <h2>${article.title}</h2>
+      ${article.body}
+  </article>
+  <footer>
+      <p>copyright ${new Date().getYear()} | The HTML5 Blog</p>
+  </footer>
+</section>
+`
+```
+
+---
+
+# Default Parameters
+
+- Default parameters are included in the ES6 spec.
+
+- So in the event that a value is not provided for the argument, the default value will be used.
+
+- For example, we can set up default strings:
+
+```javascript
+function logActivity(name = "Shane McConkey", activity = "skiing") {
+  console.log( `${name} loves ${activity}` )
+}
+```
+
+- Default arguments can be any type, not just strings:
+
+```javascript
+var defaultPerson = {
+    name: {
+        first: "Shane",
+        last: "McConkey"
+    },
+    favActivity: "skiing"
+}
+
+function logActivity(p = defaultPerson) {
+    console.log(`${p.name.first} loves ${p.favActivity}`)
+}
+```
+
+---
+
+# Arrow Functions (lambdas)
+
+- Arrow functions are a useful new feature of ES6.
+
+- With arrow functions, you can create functions without using the function keyword.
+
+```javascript
+var lordify = firstname => `${firstname} of Canterbury`
+
+// With more than one argument:
+var lordify = (firstName, land) => `${firstName} of ${land}`
+```
+
+---
+
+# Promises
+
+- Promises give us a way to make sense out of asynchronous behavior.
+
+- When making an asynchronous request, one of two things can happen: everything goes as we hope or there’s an error.
+
+- Promises give us a way to simplify back to a simple pass or fail.
+
+```javascript
+const get = url => new Promise((resolve, reject) => {
+  const req = new XMLHttpRequest()
+  req.open('GET', url)
+
+  req.onload = () =>
+    (req.status === 200) ?
+      resolve(req.response) :
+      reject(Error(req.statusText))
+
+  req.onerror = (err) => rejects(err)
+  req.send()
+
+})
+
+get('story.json').then(
+  response => console.log("Success!", response),
+  error => console.error("Failed!", error)
+)
+```
+
+---
+
+# Classes
+
+- Previously in JavaScript, there were no official classes.
+
+- Types were defined by functions.
+
+- We had to create a function and then define methods on the function object using the prototype:
+
+```javascript
+function Vacation(destination, length) {
+  this.destination = destination
+  this.length = length
+}
+
+Vacation.prototype.print = function() {
+    console.log(this.destination + " | " + this.length + " days")
+}
+
+var maui = new Vacation("Maui", 7);
+
+maui.print(); // Maui | 7
+```
+
+---
+
+# Classes
+
+- ES6 introduces class declaration, but JavaScript still works the same way.
+
+- Functions are objects, and inheritance is handled through the prototype.
+
+```javascript
+class Vacation {
+
+  constructor(destination, length) {
+    this.destination = destination
+    this.length = length
+  }
+
+  print() {
+    console.log(`${this.destination} will take ${this.length} days.`)
+  }
+
+}
+
+const trip = new Vacation("Santiago, Chile", 7);
+console.log(trip.print()); // Chile will take 7 days.
+```
+
+- Using a class still means that you are using JavaScript’s prototypal inheritance.
+
+- Log Vacation.prototype, and you’ll notice the constructor and print methods on the prototype.
+---
+
+# Classes
+
+- Classes can also be extended.
+
+```javascript
+class Expedition extends Vacation {
+
+  constructor(destination, length, gear) {
+   super(destination, length)
+   this.gear = gear
+  }
+
+  print() {
+    super.print()
+    console.log(`Bring your ${this.gear.join(" and your ")}`)
+  }
+}
+
+const trip = new Expedition("Mt. Whitney", 3, ["sunglasses", "camera"])
+trip.print()
+
+// Mt. Whitney will take 3 days.
+// Bring your sunglasses and your camera
+```
+
+---
+
+# Classes
+
+- Classes can also have static methods
+
+```javascript
+class Tripple {
+  static tripple(n) {
+    return n * 3
+  }
+}
+
+console.log(Tripple.tripple(1)); // 3
+
+var tp = new Tripple();
+console.log(tp.tripple(1)); // tp.tripple is not a function
+```
+
+---
+
+# ES6 Modules
+
+- A JavaScript module is a piece of reusable code that can easily be incorporated into other JavaScript files.
+
+- Until recently, the only way to work with modular JavaScript was to incorporate a library that could handle importing and exporting modules.
+
+- Now, with ES6, JavaScript itself supports modules.
+
+- JavaScript modules are stored in separate files, one file per module.
+
+- There are two options when creating and exporting a module:
+
+  - You can export multiple JavaScript objects from a single module.
+
+  - Or one JavaScript object per module.
+
+```javascript
+// inside text-helpers.js
+export const print(message) => log(message, new Date())
+
+export const log(message, timestamp) =>
+    console.log(`${timestamp.toString()}: ${message}`}
+```
+
+---
+
+# ES6 Modules
+
+- Sometimes you may want to export only one variable from a module. In these cases you can use export default.
+
+```javascript
+// inside mt-freel.js
+const freel = new Expedition("Mt. Freel", 2, ["water", "snack"])
+
+export default freel
+```
+
+- Again, both export and export default can be used on any JavaScript type: primitives, objects, arrays, and functions.
+
+---
+
+# ES6 Modules
+
+- Modules can be consumed in other JavaScript files using the import statement.
+
+- Modules with multiple exports can take advantage of object destructuring.
+
+- Modules that use export default are imported into a single variable:
+
+```javascript
+import { print, log } from './text-helpers'
+import freel from './mt-freel'
+
+print('printing a message')
+log('logging a message')
+
+freel.print()
+```
+
+- You can scope module variables locally under different variable names:
+
+```javascript
+import { print as p, log as l } from './text-helpers'
+
+p('printing a message')
+l('logging a message')
+```
+
+---
+
+# ES6 Modules
+
+- You can also import everything into a single variable using *:
+
+```javascript
+import * as fns from './text-helpers
+
+fns.print('printing a message')
+```
+
+- ES6 modules are not yet fully supported by all browsers.
+
+- Babel does support ES6 modules
+
+---
+
+# How “this” works with Arrow Functions
+
+- The ES6 arrow function syntax uses “lexical scoping” to figure out what the value of “this” should be.
+
+- Lexical scoping is fancy way of saying it uses “this” from the surrounding code… the code that contains the code in question.
+
+```javascript
+this.test = "attached to the module";
+var foo = {
+  test: "attached to an object"
+};
+
+// a method to create methods
+foo.method = function(name, cb){
+  this[name] = cb;
+};
+
+// use an arrow function and get lexical analysis of "this"
+foo.method("bar", () => {
+  console.log(this.test);
+});
+
+foo.bar(); // attached to the module
+```
+
+---
+
+# You can’t override an Arrow Function’s “this”
+
+- The ES6 arrow function syntax will always override any previously bound or dynamically determined value of “this”.
+
+```javascript
+this.test = "attached to the module";
+var foo = {
+  test: "attached to an object"
+};
+
+foo.method = function(name, cb){
+  // bind the value of "this" on the method to try and force it to be what you want
+  this[name] = cb.bind(this);
+};
+
+foo.method("bar", () => {
+  console.log(this.test);
+});
+
+foo.bar(); // attached to the module
+```
+
+---
+
+# ES6 Objects and Arrays
+
+- **Destructuring Assignment**
+  - The destructuring assignment allows you to locally scope fields within an object and to declare which values will be used.
+
+```javascript
+var sandwich =  {
+      bread: "dutch crunch",
+      meat: "tuna",
+      toppings: ["lettuce", "tomato", "mustard"]
+}
+
+var {bread, meat} = sandwich
+
+// We can also destructure incoming function arguments.
+
+var lordify = ({firstname}) => {
+  console.log(`${firstname} of Canterbury`)
+}
+
+// Values can also be destructured from arrays.
+
+var [firstResort] = ["Kirkwood", "Squaw", "Alpine"] // Kirkwood
+var [,,thirdResort] = ["Kirkwood", "Squaw", "Alpine"] // Alpine
+```
+
+---
+
+# ES6 Objects and Arrays
+
+- **Object Literal Enhancement**
+  - Object literal enhancement is the opposite of destructuring.
+  - It is the process of restructuring or putting back together.
+
+```javascript
+var name = "Tallac"
+var elevation = 9738
+var funHike = { name, elevation } // {name: "Tallac", elevation: 9738}
+
+// object literal old and new definition
+var oldSkier = {
+    sound: sound,
+    powderYell: function() {
+        var yell = this.sound.toUpperCase()
+        console.log(`${yell} ${yell} ${yell}!!!`)
+    }
+}
+
+const newSkier = {
+    sound,
+    powderYell() {
+        let yell = this.sound.toUpperCase()
+        console.log(`${yell} ${yell} ${yell}!!!`)
+    }
+}
+```
+
+---
+
+# ES6 Objects and Arrays
+
+- **The Spread Operator**
+  - The spread operator is three dots (...) that perform several different tasks.
+  - First, the spread operator allows us to combine the contents of arrays.
+
+```javascript
+var peaks = ["Tallac", "Ralston", "Rose"]
+var canyons = ["Ward", "Blackwood"]
+var tahoe = [...peaks, ...canyons] // Tallac, Ralston, Rose, Ward, Blackwood
+```
+
+  - It helps to grab the last item from the array rather than the first.
+
+```javascript
+var peaks = ["Tallac", "Ralston", "Rose"]
+var [last] = peaks.reverse()
+
+console.log(last) // Rose
+console.log(peaks.join(', '))  // Rose, Ralston, Tallac
+
+// but with the spread operator...
+var peaks = ["Tallac", "Ralston", "Rose"]
+var [last] = [...peaks].reverse()
+
+console.log(last) // Rose
+console.log(peaks.join(', '))  // Tallac, Ralston, Rose
+```
+
+---
+
+# ES6 Objects and Arrays
+
+- **The Spread Operator**
+  - The spread operator can also be used to get some, or the rest, of the items in the array:
+
+```javascript
+var lakes = ["Donner", "Marlette", "Fallen Leaf", "Cascade"]
+var [first, ...rest] = lakes
+
+console.log(rest.join(", ")) // "Marlette, Fallen Leaf, Cascade"
+```
+
+  - We can also use the spread operator to collect function arguments as an array.
+
+```javascript
+function directions(...args) {
+  // hello args!
+}
+
+directions("Truckee", "Tahoe City", "Sunnyside", "Homewood", "Tahoma")
+```
+
+---
+
+# ES6 Objects and Arrays
+
+- **The Spread Operator**
+  - The spread operator can also be used for objects.
+
+```javascript
+var morning = {
+  breakfast: "oatmeal",
+  lunch: "peanut butter and jelly"
+}
+
+var dinner = "mac and cheese"
+
+var backpackingMeals = {
+  ...morning,
+  dinner
+}
+
+// { breakfast: "oatmeal", lunch: "peanut butter and jelly", dinner: "mac and cheese" }
+```
+
+---
+
+# Transpiling
+
+- Not all web browsers support ES6, and even those that do don’t support everything.
+
+- The only way to be sure that your ES6 code will work is to convert it to ES5 code before running it in the browser.
+
+- This process is called transpiling.
+
+  - One of the most popular tools for transpiling is Babel.
+
+- Transpiling is not compiling: our code isn’t compiled to binary.
+
+- How to use Babel
+  - You just include the browser.js file, and any scripts with type="text/babel" will be converted
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js">
+</script>
+
+<script src="script.js" type="text/babel"></script>
+```
+
+---
+
+class: center, middle
+
+# Functional Programming in JavaScript
+
+.max-width-img[[![Alt Functional Prog](5-js/functional.jpeg)](https://medium.com/javascript-scene/why-learn-functional-programming-in-javascript-composing-software-ea13afc7a257)]
+
+---
+
+# LINKS Y BIBLIOGRAFÍA
+
+- Learning React (Functional Web Development with React and Redux) - By Alex Banks, Eve Porcello
+- You Don't Know JS: ES6 & Beyond - By Kyle Simpson
+- https://developer.mozilla.org/es/docs/Web/JavaScript
+- https://rainsoft.io/gentle-explanation-of-this-in-javascript/
+- http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/
+- https://medium.com/javascript-scene/why-learn-functional-programming-in-javascript-composing-software-ea13afc7a257
