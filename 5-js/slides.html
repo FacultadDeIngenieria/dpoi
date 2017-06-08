@@ -639,6 +639,67 @@ console.log('global', topic)      // JavaScript
 
 ---
 
+# New Data Structures
+
+## Set
+
+- Iterate elements in order
+- Unique elements
+- Accepts NaN or undefined
+
+--
+
+```javascript
+var mySet = new Set();
+mySet.add("cat");
+mySet.add(24);
+mySet.add("bunny");
+for (let item of mySet) console.log(item);
+// "cat"
+// 24
+// "bunny"
+```
+
+---
+
+# New Data Structures
+
+## Map
+
+- Iterate elements in order
+- Key/value pairing
+- Unique keys
+- Accepts NaN or undefined
+
+---
+
+# New Data Structures
+
+## Differences between Object and Map
+
+- Object has a prototype so there are default keys
+- Can be bypassed using map = Object.create(null)
+- Object keys are string whereas map keys can be anything
+- Map keeps track of size
+- Use maps over objects when keys are unknown until run time
+- Use objects when there is logic that operates on individual elements
+
+--
+
+```javascript
+var myMap = new Map();
+myMap.set("cat", "bengal");
+myMap.set(24, 12);
+myMap.set(NaN, "not a number");
+myMap.get(NaN); // "not a number"
+for (var [key, value] of myMap) console.log(key + " - " + value);
+// "cat - bengal"
+// "24 - 12"
+// "NaN - not a number"
+```
+
+---
+
 # Template Strings
 
 - Template strings provide us with an alternative to string concatenation.
