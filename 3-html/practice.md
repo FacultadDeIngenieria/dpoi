@@ -1,12 +1,12 @@
 ---
-title: Práctica 1 - X(HTML)
+title: Práctica 1 - HTML
 layout: practice
 permalink: /practice/html
 ---
 
-# Práctica 1: X(HTML)
+# Práctica 1: HTML
 
-## Crear una página *concepts.xhtml* que contenga:
+## Crear una página *concepts.html* que contenga:
 1. Un indice apuntando al resto de las secciones y sus sub-secciones.
 
 2. Una breve explicación de porqué es generalmente incorrecto usar el tag `<br/>`, y ejemplificar su buen uso con la letra de una canción o poema.
@@ -18,7 +18,7 @@ permalink: /practice/html
  4. XHTML
  5. CSS
 
-## Crear una segunda página *users.xhtml* que contenga:
+## Crear una segunda página *users.html* que contenga:
 
 4. Una tabla como la detallada a continuación (ver sólo el formato no el estilo, es decir que no va ni alineada ni con borde, si con los íconos):
 
@@ -31,7 +31,7 @@ permalink: /practice/html
  4. Botones para enviar y cancelar la operación
 
 ## Requisitos:
-- La página debe ser xhtml 1.1:
+- La página debe ser <!DOCTYPE html>:
   - No se permite el uso de tags para presentación.
   - Las páginas deben ser validadas usando el validator de W3C.
 - Se debe formar el html usando el tag semánticamente más apropiado.
