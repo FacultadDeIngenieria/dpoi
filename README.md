@@ -17,10 +17,10 @@
 
 1. [HTML](practice/html) (09/03/2018)
 
-## Presentaciónes
+## Presentaciones
 
-1. Building: gulp, grunt, bower, babel 
-2. Loading: Requirejs, commonjs, browserify 
+1. Building: gulp, grunt, bower, babel
+2. Loading: Requirejs, commonjs, browserify
 3. Styling: less. sass, scss, bootstrap
 4. Rendering: ReactJs, Angular 2, Polymer
 5. Testing: jasmine, karma, ?
@@ -33,7 +33,7 @@
 
 ## Facultad de Ingeniería, Universidad Austral
 
-[Sitio de la materia](http://facultaddeingenieria.github.io/dpoi)
+[Sitio de la materia](//facultaddeingenieria.github.io/dpoi)
 
 ## Cátedra:
 

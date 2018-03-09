@@ -32,6 +32,6 @@ permalink: /practice/html
 
 ## Requisitos:
 - La página debe ser xhtml 1.1:
- - No se permite el uso de tags para presentación.
- - Las páginas deben ser validadas usando el w3g validator (usar el validador de W3C).
-- Se debe formar el html usando el tag semanticamente más apropiado.
+  - No se permite el uso de tags para presentación.
+  - Las páginas deben ser validadas usando el validator de W3C.
+- Se debe formar el html usando el tag semánticamente más apropiado.
