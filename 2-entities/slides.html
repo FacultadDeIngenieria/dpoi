@@ -75,7 +75,7 @@ D.P.O.I.
 
 - Una URL puede ser:
  - Absoluta: Describe el path completo del recurso
- - Relativa: Describe la ubicación de un recurso relativo al un contexto.
+ - Relativa: Describe la ubicación de un recurso relativo a un contexto.
 
 
 | Recurso | URL Absoluta | URL Relativa |
@@ -226,14 +226,67 @@ Headers list: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
 
 # HTTP - MEJORAS EN LA VERSIÓN 1.1
 
+- Extensibility
+  - Version numbers, OPTIONS, Upgrade
+- Caching
+  - If-Modified-Since, Last-Modified, Pragma: no-cache ++ If-None-Match, ETag, Cache-Control, max-age
+- Bandwidth optimization
+  - Range requests, Expect 100/417, Compression: Transfer-Encoding
+- Network connection management
+  - Persistent connections: Keep-Alive, Pipelining
+- Message transmission
+  - Transfer-Encoding: chunked, Trailer
+- Internet address conservation
+  - Host
+- Error notification
+  - Warning
+- Security, integrity, and authentication
+  - Proxy-Authenticate, Content-MD5
+- Content negotiation
+  - Accept- Language, Accept-Charset, quality value
+
+
+???
+
 - Faster response, by allowing multiple transactions to take place over a single persistent connection.
 - Faster response and great bandwidth savings, by improving cache support.
 - Faster response for dynamically-generated pages, by supporting chunked encoding, which allows a response to be sent before its total length is known.
 - Efficient use of IP addresses, by allowing multiple domains to be served from a single IP address. (Host Header).
 
+Key differences between HTTP=1.0 and HTTP=1.1: http://www.ra.ethz.ch/cdstore/www8/data/2136/pdf/pd1.pdf
+HTTP/2 vs HTTP/1 – performance comparison: https://imagekit.io/blog/http2-vs-http1-performance/
+
+---
+
+# HTTP - DESVENTAJAS DE LA VERSIÓN 1.1
+
+- One open request per connection
+  - ~ Pipelining
+- Duplication of data
+  - Cookies and other headers
+
 ???
 
-Key Differences between HTTP/1.0 and HTTP/1.1: http://www8.org/w8-papers/5c-protocols/key/key.html
+https://imagekit.io/blog/http2-vs-http1-performance/
+
+---
+
+# HTTP/2
+
+- Multiplexed, instead of ordered
+  - Multiple parallel requests
+- Header compression
+  - HPACK
+- Server Push
+- Binary
+  - More efficient to parse, more compact "on the wire," much less error-prone
+
+---
+
+![](2-entities/http2-1.jpg)
+
+## See it in Action
+https://imagekit.io/demo/http2-vs-http1
 
 ---
 
