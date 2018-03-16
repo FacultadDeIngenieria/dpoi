@@ -5,6 +5,7 @@
 1. [Historia de la web](history) (09/03/2018)
 2. [Entidades Principales de la Web](entities) (09/03/2018)
 3. [HTML](html) (09/03/2018)
+4. [CSS](css) (16/03/2018)
 
 ## Lecturas Adicionales:
 
@@ -16,6 +17,7 @@
 ## Trabajos Prácticos:
 
 1. [HTML](practice/html) (09/03/2018)
+2. [CSS](practice/css) (16/03/2018)
 
 ## Presentaciones
 
