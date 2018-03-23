@@ -6,6 +6,7 @@
 2. [Entidades Principales de la Web](entities) (09/03/2018)
 3. [HTML](html) (09/03/2018)
 4. [CSS](styles) (16/03/2018)
+5. [JS](js) (23/03/2018)
 
 ## Lecturas Adicionales:
 
@@ -18,6 +19,7 @@
 
 1. [HTML](practice/html) (09/03/2018)
 2. [CSS](practice/styles) (16/03/2018)
+3. [JS](practice/js) (23/2018)
 
 ## Presentaciones
 
