@@ -7,6 +7,7 @@
 3. [HTML](html) (09/03/2018)
 4. [CSS](styles) (16/03/2018)
 5. [JS](js) (23/03/2018)
+6. [Structured Data](structured-data) (06/04/2018)
 
 ## Lecturas Adicionales:
 
@@ -19,7 +20,9 @@
 
 1. [HTML](practice/html) (09/03/2018)
 2. [CSS](practice/styles) (16/03/2018)
-3. [JS](practice/js) (23/2018)
+3. - [JS](practice/js) (23/03/2018)
+   - [JS++](practice/js++) (23/03/2018)
+4. [Scrapping](practice/scrapping) (06/04/2018)
 
 ## Presentaciones
 
@@ -37,7 +40,7 @@
 
 ## Facultad de Ingeniería, Universidad Austral
 
-[Sitio de la materia](//facultaddeingenieria.github.io/dpoi)
+[Sitio de la materia](http://facultaddeingenieria.github.io/dpoi)
 
 ## Cátedra:
 

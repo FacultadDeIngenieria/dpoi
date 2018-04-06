@@ -1,13 +1,13 @@
 ---
-title: Práctica 4 - JS++
+title: Práctica 3+ - JS
 layout: practice
 permalink: /practice/js++
 ---
 
-# Práctica 4: JS++
+# Práctica 3+: JS
 
 ## Enunciado:
-Completar la funcionalidad del trabajo anterior con el agregado de:
+Completar la funcionalidad anterior con el agregado de:
 
 1. Crear: Permitir agregar items a la tabla. Utilizar el servicio `"url":"/api/1.0/create"`. El return de ese método debería ser el object a agregar.
 2. Editar: Permitir editar un item particular. Utilizar el servicio `"url":"/api/1.0/update"`.

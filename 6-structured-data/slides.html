@@ -1,0 +1,193 @@
+---
+title: JavaScript
+layout: remark
+permalink: /structured-data
+---
+
+class: center, middle, inverse
+
+# Structured Data
+D.P.O.I.
+
+---
+
+# Linked Data
+
+Linked Data empowers people that publish and use information on the Web.
+
+It is a way to create a network of standards-based, machine-readable data across Web sites.
+
+It allows an application to start at one piece of Linked Data, and follow embedded links to other pieces of Linked Data that are hosted on different sites across the Web.
+
+---
+
+# Linked Data / Structured Data
+
+Linked Data is a method of publishing Structured Data so that it can be interlinked and become more useful through semantic queries.
+
+It builds upon standard Web technologies such as HTTP, RDF and URIs, but rather than using them to serve web pages for human readers, it extends them to share information in a way that can be read automatically by computers.
+
+---
+
+# Structured Data on the Web
+
+Structured data is a standardized format for providing information about a page and classifying the page content.
+
+Search engines, web crawlers, and browsers can extract and process Structured Data from a web page and use it to provide a richer browsing experience for users.
+
+???
+
+For example, on a recipe page, what are the ingredients, the cooking time and temperature, the calories, and so on.
+
+https://developers.google.com/search/docs/guides/intro-structured-data
+
+---
+
+# Vocabularies
+
+Vocabularies define the concepts and relationships (also referred to as “terms”) used to describe and represent an area of concern.
+
+Vocabularies are used to classify the terms that can be used in a particular application, characterize possible relationships, and define possible constraints on using those terms.
+
+In practice, vocabularies can be very complex (with several thousands of terms) or very simple (describing one or two concepts only).
+
+???
+
+- Help data integration
+- Organize knowledge
+
+---
+
+# Formats
+
+- JSON-LD
+
+JavaScript notation embedded in a < script > tag in the page head or body.
+
+--
+
+- Microdata
+
+An open-community HTML specification used to nest structured data within HTML content.
+
+--
+
+- RDFa
+
+An HTML5 extension that supports linked data by introducing HTML tag attributes that correspond to the user-visible content that you want to describe for search engines.
+
+???
+
+JSON-LD: https://json-ld.org/
+Microdata: https://www.w3.org/TR/microdata/
+RDFa: https://rdfa.info/
+
+---
+
+# JSON-LD
+
+```html
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "@id": "http://musicbrainz.org/artist/4d5447d7-c61c-4120-ba1b-d7f471d385b9"
+    "name": "John Lennon",
+}
+</script>
+```
+
+---
+
+# JSON-LD
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Product",
+  "name": "[the name of the product]",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "[rating]",
+    "reviewCount": "[number of reviews]"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "name": "[review title/summary]",
+      "author": "[name of reviewer]",
+      "datePublished": "[date in ISO format e.g. 2012-04-15]",
+      "description": "[the actual user review text]",
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "[highest possible rating]",
+        "ratingValue": "[rating given by reviewer]",
+        "worstRating": "[lowest possible rating]"
+      }
+    }
+  ]
+}
+</script>
+```
+
+---
+
+# Microdata
+
+```html
+<div itemscope itemtype="http://schema.org/Person" itemid="http://musicbrainz.org/artist/4d5447d7-c61c-4120-ba1b-d7f471d385b9">
+    Name: <span itemprop="name">John Lennon</span>
+</div>
+```
+
+--
+
+- **itemscope** – is an indicator that the content within this < div > is an item.
+
+
+--
+
+- **itemtype** – describes what the item is, in the above instance ‘Person’.
+
+--
+
+- **itemtid** – describes what the item is, in the above instance ‘Person’.
+
+--
+
+- **Itemprop** – describes each property of the specific item.
+
+???
+
+Form of semantic mark-up designed to describe elements on a web page e.g. review, person, event etc.
+
+This mark-up can be combined with typical HTML properties to dedlfine each item type through the use of associated attributes.
+
+---
+
+# Microdata
+
+```html
+<div itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <span itemprop="name">[review title/summary]</span> - by
+    <span itemprop="author">[name of reviewer]</span>,
+    <meta itemprop="datePublished" content="[date in ISO format e.g. 2012-04-15]">April 15th, 2012
+    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+        <meta itemprop="worstRating" content="[lowest possible rating]">
+        <span itemprop="ratingValue">[rating given by reviewer]</span>/
+        <span itemprop="bestRating">[highest possible rating]</span>stars
+    </div>
+    <span itemprop="description">[The actual user review text]</span>
+</div>
+```
+
+---
+
+# LINKS Y BIBLIOGRAFÍA
+
+- JSON-LD https://json-ld.org/
+- Microdata https://www.w3.org/TR/microdata/
+- RDFa https://rdfa.info/
+- https://builtvisible.com/micro-data-schema-org-guide-generating-rich-snippets/
+- https://developers.google.com/search/docs/guides/intro-structured-data
