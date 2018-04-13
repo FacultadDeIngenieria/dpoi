@@ -1,0 +1,53 @@
+#%RAML 1.0
+
+title: ACME Scrapping
+version: 1.0
+
+baseUri: acme-scrapping.com/api
+
+/{container}:
+  uriParameters:
+    container: string
+  get:
+    description: Return all container resources
+    responses:
+      200:
+        body:
+          application/ld+json:
+            type: array
+            example: |
+              [
+                {
+                  "@id": "http://acme-scrapping.com/api/NewsArticle/",
+                  "@type": ["http://www.w3.org/ns/ldp#BasicContainer"],
+                  "http://purl.org/dc/terms/title": [{"@value": "Container of Article resources"}],
+                  "http://www.w3.org/ns/ldp#contains": [
+                    {"@id": "http://acme-scrapping.com/api/NewsArticle/sha1"},
+                    {"@id": "http://acme-scrapping.com/api/NewsArticle/sha2"},
+                    {"@id": "http://acme-scrapping.com/api/NewsArticle/sha3"}
+                  ]
+                }
+              ]
+  /{resource}:
+    uriParameters:
+        resource: string
+    get:
+      description: Return specific resource
+      responses:
+        200:
+          body:
+            application/ld+json:
+              type: array | object
+              example: |
+                {
+                    "@context" : "http://schema.org",
+                    "@id": "http://acme-scrapping.com/api/NewsArticle/ca0c6882e63494b550d8e3e70fe920c345bc3575",
+                    "@type" : "NewsArticle",
+                    "headline" : "Máxima tensión en Brasil: venció el plazo para que Lula se entregue",
+                    "url" : "https://www.lanacion.com.ar/2123329-a-una-hora-de-que-venza-el-plazo-para-entregarse-habla-lula",
+                    "thumbnailUrl" : "//bucket2.glanacion.com/anexos/fotos/84/2661184.jpg",
+                    "articleSection" : "El Mundo",
+                    "dateCreated" : "06/04/2018 03:39:00 p.m.",
+                    "creator" : [ "" ],
+                    "keywords" : [ "Lula da Silva", "El mundo", "Lula ante la Justicia" ]
+                }
