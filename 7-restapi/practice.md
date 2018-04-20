@@ -9,7 +9,7 @@ api: api.raml
 
 ## Enunciado:
 
-1. Extraer información de distintas páginas de manera genérica utilizando el schema de scrapping de la práctica 5.
+1. Extraer structured data de distintas páginas de manera genérica utilizando lo realizado en la práctica 5.
 2. Guardar la información json obtenida de forma permanente en una base de datos (Ej. DynamoDB, MongoDB, Cassandra).
 3. Exponer esos datos a través de un api rest.
 

@@ -1,10 +1,10 @@
 ---
-title: Práctica 8 - Serverless
+title: Práctica 6 - Serverless
 layout: practice
 permalink: /practice/serverless
 ---
 
-# Práctica 8: Serverless Scrapping
+# Práctica 6: Serverless Scrapping
 
 ## Enunciado:
 
@@ -24,11 +24,10 @@ permalink: /practice/serverless
 
 ## Bonus Point
 
-1. Extender el proyecto [Serverless Scrapping](https://github.com/FacultadDeIngenieria/serverless-scrapping) con CreateSchemaAction. Esta acción deberá extender de ApplicationAction y crear un nuevo schema con el JSON schema especificado.
+1. Extender el proyecto [Serverless Scrapping](https://github.com/FacultadDeIngenieria/serverless-scrapping) con ListByContainerAction (esta acción deberá extender de ApplicationAction también).
 2. Extender el Scrapping API con la nueva funcionalidad:
-  - /schemas
-    - GET: Listar schemas de la aplicación.
-    - **POST: Crear un nuevo schema en la aplicación.**
+  - /container/:container
+        - GET: Listar scraps del container dado.
   - /scraps
-    - GET: Listar scraps de la aplicación.
-    - POST: Realizar un scrapping de la url dada con el schema especificado.
+        - GET: Listar scraps de la aplicación.
+        - POST: Realizar un scrapping de la url dada.
