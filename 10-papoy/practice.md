@@ -45,17 +45,16 @@ Crear un juego online para jugar a la batalla naval.
 2. 11/05
   - Login con Facebook
   - Home (únicamente con boton de play)  
-3. 18/05
   - Prototipo de mensajería para el juego, donde se conecte a dos usuarios por websockets y estos puedan mensajearse entre si
-  - Prototipo de tablero
-4. 25/05
+3. 18/05
   - Preparación. Ubicación de flota en el tablero.
-5. 01/06
+4. 25/05
   - Estados del juego.
   - Sincronización de turnos.
   - Prototipo de batalla.
-6. 08/06 
+5. 01/06
   - Batalla.
+6. 08/06 
   - Finalización.
 7. 15/06
   - Deployment.
