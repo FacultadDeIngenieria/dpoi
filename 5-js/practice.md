@@ -30,5 +30,5 @@ Todas las respuestas vienen dadas en formato Json. Desde Javascript se debe:
 5. Popular la tabla.
 
 ## Requisitos:
-- La página debe ser xhtml 1.1:
- - Las páginas deben ser validadas usando el W3G validator (xhtml y css).
+- La página debe ser html:
+ - Las páginas deben ser validadas usando el W3G validator (html y css).
