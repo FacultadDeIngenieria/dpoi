@@ -32,5 +32,5 @@ Todas las respuestas vienen dadas en formato Json. Desde Javascript se debe:
 La tabla deberá renderear los datos que el servicio provea, utilizando un html que valide xhtml 1.1 y utilice una hoja de estilos externa. Los formularios para la carga, visualización y edición deberán residir en la misma página, **no se deberá navegar a traves de múltiples páginas**.
 
 ## Requisitos:
-- La página debe ser xhtml 1.1:
- - Las páginas deben ser validadas usando el W3G validator (xhtml y css).
+- La página debe ser html 5:
+ - Las páginas deben ser validadas usando el W3G validator (html y css).
