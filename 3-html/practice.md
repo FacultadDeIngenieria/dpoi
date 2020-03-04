@@ -12,11 +12,11 @@ permalink: /practice/html
 2. Una breve explicación de porqué es generalmente incorrecto usar el tag `<br/>`, y ejemplificar su buen uso con la letra de una canción o poema.
 
 3. Una lista de **definición** con una breve explicación de:
- 1. URI
- 2. URL
- 3. HTML
- 4. XHTML
- 5. CSS
+   1. URI
+   2. URL
+   3. HTML
+   4. XHTML
+   5. CSS
 
 ## Crear una segunda página *users.html* que contenga:
 
@@ -25,10 +25,10 @@ permalink: /practice/html
  ![](../3-html/users.png)
 
 5. Un formulario con secciones para poder ingresar:
- 1. Usuario (Nombre, Apellido, Mail, Telefono)
- 2. Direccion (Calle, combo de Provincias, Código postal)
- 3. Otra (Fecha de nacimiento con un máximo de 10 caracteres, Estado civil con un radio, Foto con un file chooser, Comentario con un textarea)
- 4. Botones para enviar y cancelar la operación
+   1. Usuario (Nombre, Apellido, Mail, Telefono)
+   2. Direccion (Calle, combo de Provincias, Código postal)
+   3. Otra (Fecha de nacimiento con un máximo de 10 caracteres, Estado civil con un radio, Foto con un file chooser, Comentario con un textarea)
+   4. Botones para enviar y cancelar la operación
 
 ## Requisitos:
 - La página debe ser <!DOCTYPE html>:
