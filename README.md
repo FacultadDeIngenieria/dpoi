@@ -15,6 +15,7 @@
 2. [Understanding Resource Timing](https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing)
 2. [HTML tags](http://www.w3schools.com/tags) (09/03/2018)
 3. [To close or not to close](http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html) (16/03/2018)
+4. [REST API best practices](https://www.merixstudio.com/blog/best-practices-rest-api-development/)
 
 ## Trabajos Prácticos:
 
