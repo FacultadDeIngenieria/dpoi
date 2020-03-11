@@ -2,12 +2,12 @@
 
 ## Presentaciones:
 
-1. [Historia de la web](history) (09/03/2018)
-2. [Entidades Principales de la Web](entities) (09/03/2018)
-3. [HTML](html) (09/03/2018)
-4. [CSS](styles) (16/03/2018)
-5. [JS](js) (23/03/2018)
-6. [Structured Data](structured-data) (06/04/2018)
+1. [Historia de la web](history) (04/03/2020)
+2. [Entidades Principales de la Web](entities) (04/03/2020)
+3. [HTML](html) (04/03/2020)
+4. [CSS](styles) (11/03/2020)
+<!---5. [JS](js) (23/03/2018)
+6. [Structured Data](structured-data) (06/04/2018)-->
 
 ## Lecturas Adicionales:
 
@@ -19,9 +19,9 @@
 
 ## Trabajos Prácticos:
 
-1. [HTML](practice/html) (09/03/2018)
-2. [CSS](practice/styles) (16/03/2018)
-3. - [JS](practice/js) (23/03/2018)
+1. [HTML](practice/html) (04/03/2020)
+2. [CSS](practice/styles) (11/03/2020)
+<!---3. - [JS](practice/js) (23/03/2018)
    - [JS++](practice/js++) (23/03/2018)
 4. [Scrapping](practice/scrapping) (06/04/2018)
 5. [RestApi](practice/restapi) (13/04/2018)
@@ -29,8 +29,10 @@
 7. [Serverless](practice/serverless) (20/04/2018)
 8. [Batalla Naval](practice/papoy) (04/05/2018)
 
-## Presentaciones
 
+<!--## Presentaciones-->
+
+<!--
 1. Webpack & babel
 3. Styling exteroids: less, sass, scss. Frameworks: Pure, Bootstrap, Bulma
 4. Rendering: ReactJs, Angular 2, Polymer
@@ -39,6 +41,7 @@
 7. Benchmarking: tools and best practices
 8. Rxjs
 9. Play, Nodejs+Express, AkkaHttp
+-->
 
 ---
 
