@@ -19,4 +19,4 @@ Darle estilo a las páginas del TP1 sobre (X)HTML:
 - No se permite el uso de tags para presentación.
 - El HTML usado debe ser el mismo para los diferentes layouts.
 - No se permite el uso de tags para presentación.
-- Las páginas deben ser validadas usando el W3G validator (html y css).
+- Las páginas deben ser validadas usando el W3C validator (html y css).
