@@ -6,7 +6,7 @@
 2. [Entidades Principales de la Web](entities) (04/03/2020)
 3. [HTML](html) (04/03/2020)
 4. [CSS](styles) (11/03/2020)
-<!--5. [JS](js) (23/03/2018)-->
+5. [JS](js) (23/03/2018)
 <!--6. [Structured Data](structured-data) (06/04/2018)-->
 
 ## Lecturas Adicionales:
@@ -21,7 +21,7 @@
 
 1. [HTML](practice/html) (04/03/2020)
 2. [CSS](practice/styles) (11/03/2020)
-<!--3. - [JS](practice/js) (23/03/2018)-->
+3. - [JS](practice/js) (23/03/2018)
 <!--   - [JS++](practice/js++) (23/03/2018)-->
 <!--4. [Scrapping](practice/scrapping) (06/04/2018)-->
 <!--5. [RestApi](practice/restapi) (13/04/2018)-->
