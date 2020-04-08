@@ -1,18 +1,18 @@
 ---
-title: Práctica 4 - Scrapping
+title: Práctica 5 - Scrapping
 layout: practice
 permalink: /practice/scrapping
 top: top250.json
 ---
 
-# Práctica 4: Scrapping
+# Práctica 5: Scrapping
 
 ## Enunciado:
 Implementar un structured data scrapper que retorne un **json-ld** con la data de una página dada.
 
 Aplicar el scrapping al rango de páginas:
 
-**http://www.lanacion.com.ar/{1885100..1885200}**
+**http://www.lanacion.com.ar/{2351900..2352000}**
 
 Y a las páginas:
 

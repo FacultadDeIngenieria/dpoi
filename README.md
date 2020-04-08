@@ -7,7 +7,7 @@
 3. [HTML](html) (04/03/2020)
 4. [CSS](styles) (11/03/2020)
 5. [JS](js) (25/03/2020)
-<!--6. [Structured Data](structured-data) (06/04/2018)-->
+6. [Structured Data](structured-data) (08/04/2020)
 
 ## Lecturas Adicionales:
 
@@ -23,7 +23,7 @@
 2. [CSS](practice/styles) (11/03/2020)
 3. [JS](practice/js) (25/03/2020)
 4. [JS++](practice/js++) (01/04/2020)
-<!--4. [Scrapping](practice/scrapping) (06/04/2018)-->
+5. [Scrapping](practice/scrapping) (08/04/2020)
 <!--5. [RestApi](practice/restapi) (13/04/2018)-->
 <!--6. [Visualization](practice/visualization) (skip)-->
 <!--7. [Serverless](practice/serverless) (20/04/2018)-->
