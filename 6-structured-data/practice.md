@@ -2,7 +2,7 @@
 title: Práctica 5 - Scrapping
 layout: practice
 permalink: /practice/scrapping
-top: top250.json
+top: garba-ofertas.json
 ---
 
 # Práctica 5: Scrapping
@@ -16,7 +16,7 @@ Aplicar el scrapping al rango de páginas:
 
 Y a las páginas:
 
-[Top 250 IMDB](/{{page.top}})
+[Listado Retail](/{{page.top}})
 
 ```javascript
 {% include_relative {{page.top}} %}
