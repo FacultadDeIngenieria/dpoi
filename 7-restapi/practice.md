@@ -1,11 +1,11 @@
 ---
-title: Práctica 5 - RestApi
+title: Práctica 6 - RestApi
 layout: practice
 permalink: /practice/restapi
-api: api.raml
+api: api.json
 ---
 
-# Práctica 5: RestApi
+# Práctica 6: RestApi
 
 ## Enunciado:
 

@@ -24,7 +24,7 @@
 3. [JS](practice/js) (25/03/2020)
 4. [JS++](practice/js++) (01/04/2020)
 5. [Scrapping](practice/scrapping) (08/04/2020)
-<!--5. [RestApi](practice/restapi) (13/04/2018)-->
+6. [RestApi](practice/restapi) (15/04/2020)
 <!--6. [Visualization](practice/visualization) (skip)-->
 <!--7. [Serverless](practice/serverless) (20/04/2018)-->
 <!--8. [Batalla Naval](practice/papoy) (04/05/2018)-->
