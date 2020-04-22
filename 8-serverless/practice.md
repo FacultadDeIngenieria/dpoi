@@ -1,10 +1,10 @@
 ---
-title: Práctica 6 - Serverless
+title: Práctica 7 - Serverless
 layout: practice
 permalink: /practice/serverless
 ---
 
-# Práctica 6: Serverless Scrapping
+# Práctica 7: Serverless Scrapping
 
 ## Enunciado:
 
@@ -15,12 +15,10 @@ permalink: /practice/serverless
 3. Crear una función **Lambda** con el código del proyecto extendido.
 4. Especificar permisos de la función **Lambda** para leer y escribir en **DynamoDB**.
 5. Crear un Scrapping API en **API Gateway** con los siguientes resources y métodos:
-  - /schemas
-    - GET: Listar schemas de la aplicación.
   - /scraps
     - GET: Listar scraps de la aplicación.
-    - POST: Realizar un scrapping de la url dada con el schema especificado.
-6. Exponer el API en un ambiente de test y probar el mismo desde Postman importando el descriptor *Swagger* del mismo.
+    - POST: Realizar un scrapping de la url dada.
+6. Exponer el API en un ambiente de test y probar el mismo desde Postman importando un descriptor *OAS* del mismo.
 
 ## Bonus Point
 

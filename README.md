@@ -26,7 +26,7 @@
 5. [Scrapping](practice/scrapping) (08/04/2020)
 6. [RestApi](practice/restapi) (15/04/2020)
 <!--6. [Visualization](practice/visualization) (skip)-->
-<!--7. [Serverless](practice/serverless) (20/04/2018)-->
+7. [Serverless](practice/serverless) (22/04/2020)
 <!--8. [Batalla Naval](practice/papoy) (04/05/2018)-->
 
 
