@@ -34,7 +34,7 @@
 
 1. Webpack & babel
 2. ReactJs, Angular 2, Polymer
-3. Styling exteroids (less, sass, scss) and frameworks (Pure, Bootstrap, Bulma).
+3. Styling steroids (less, sass, scss) and frameworks (Pure, Bootstrap, Bulma).
 4. Unit testing with Jest and E2E testing with Webdriver
 5. Play, Nodejs+Express, AkkaHttp, Micronaut, Spring Boot
 6. Benchmarking tools and best practices
