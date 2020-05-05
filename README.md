@@ -27,21 +27,19 @@
 6. [RestApi](practice/restapi) (15/04/2020)
 <!--6. [Visualization](practice/visualization) (skip)-->
 7. [Serverless](practice/serverless) (22/04/2020)
-<!--8. [Batalla Naval](practice/papoy) (04/05/2018)-->
+8. [Batalla Naval](practice/papoy) (05/05/2020)
 
 
-<!--## Presentaciones-->
+## Presentaciones
 
-<!--
 1. Webpack & babel
-3. Styling exteroids: less, sass, scss. Frameworks: Pure, Bootstrap, Bulma
-4. Rendering: ReactJs, Angular 2, Polymer
-5. Unit testing with Jest
-6. E2E testing with Webdriver/Selenium
-7. Benchmarking: tools and best practices
-8. Rxjs
-9. Play, Nodejs+Express, AkkaHttp
--->
+2. ReactJs, Angular 2, Polymer
+3. Styling exteroids (less, sass, scss) and frameworks (Pure, Bootstrap, Bulma).
+4. Unit testing with Jest and E2E testing with Webdriver
+5. Play, Nodejs+Express, AkkaHttp, Micronaut, Spring Boot
+6. Benchmarking tools and best practices
+7. Rxjs
+8. GraphQL
 
 ---
 
