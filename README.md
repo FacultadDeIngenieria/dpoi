@@ -40,6 +40,7 @@
 6. Benchmarking tools and best practices
 7. Rxjs
 8. GraphQL
+9. Cloud service
 
 ---
 
