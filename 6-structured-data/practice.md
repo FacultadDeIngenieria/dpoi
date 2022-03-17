@@ -1,8 +1,7 @@
 ---
-title: Práctica 5 - Scrapping
+title: Práctica 2 - Scrapping
 layout: practice
 permalink: /practice/scrapping
-top: garba-ofertas.json
 ---
 
 # Práctica 5: Scrapping
@@ -12,15 +11,11 @@ Implementar un structured data scrapper que retorne un **json-ld** con la data d
 
 Aplicar el scrapping al rango de páginas:
 
-**http://www.lanacion.com.ar/{2351900..2352000}**
+**http://www.lanacion.com.ar/{2850000..2850100}**
 
-Y a las páginas:
+Y a los primeros 200 productos del listado:
 
-[Listado Retail](/{{page.top}})
-
-```javascript
-{% include_relative {{page.top}} %}
-```
+**https://www.fravega.com/l/celulares/**
 
 ## Requisitos:
 - El programa deberá aceptar como parámetro una URL. El output del mismo deberá ser un *json-ld* válido.

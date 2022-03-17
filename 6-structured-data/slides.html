@@ -66,12 +66,6 @@ JavaScript notation embedded in a < script > tag in the page head or body.
 
 --
 
-- Microdata
-
-An open-community HTML specification used to nest structured data within HTML content.
-
---
-
 - RDFa
 
 An HTML5 extension that supports linked data by introducing HTML tag attributes that correspond to the user-visible content that you want to describe for search engines.
@@ -79,7 +73,6 @@ An HTML5 extension that supports linked data by introducing HTML tag attributes 
 ???
 
 JSON-LD: https://json-ld.org/
-Microdata: https://www.w3.org/TR/microdata/
 RDFa: https://rdfa.info/
 
 ---
@@ -91,8 +84,8 @@ RDFa: https://rdfa.info/
 {
     "@context": "http://schema.org",
     "@type": "Person",
-    "@id": "http://musicbrainz.org/artist/4d5447d7-c61c-4120-ba1b-d7f471d385b9"
-    "name": "John Lennon",
+    "@id": "http://musicbrainz.org/artist/4d5447d7-c61c-4120-ba1b-d7f471d385b9",
+    "name": "John Lennon"
 }
 </script>
 ```
@@ -133,61 +126,53 @@ RDFa: https://rdfa.info/
 
 ---
 
-# Microdata
+# RDFa
 
 ```html
-<div itemscope itemtype="http://schema.org/Person" itemid="http://musicbrainz.org/artist/4d5447d7-c61c-4120-ba1b-d7f471d385b9">
-    Name: <span itemprop="name">John Lennon</span>
-</div>
+<html>
+<head>
+    ...
+</head>
+<body>
+...
+<h2 property="http://purl.org/dc/terms/title">The Trouble with Bob</h2>
+<p>Date: <span property="http://purl.org/dc/terms/created">2011-09-10</span></p>
+...
+</body>
 ```
-
---
-
-- **itemscope** – is an indicator that the content within this < div > is an item.
-
-
---
-
-- **itemtype** – describes what the item is, in the above instance ‘Person’.
-
---
-
-- **itemtid** – describes what the item is, in the above instance ‘Person’.
-
---
-
-- **Itemprop** – describes each property of the specific item.
-
-???
-
-Form of semantic mark-up designed to describe elements on a web page e.g. review, person, event etc.
-
-This mark-up can be combined with typical HTML properties to dedlfine each item type through the use of associated attributes.
 
 ---
 
-# Microdata
+# RDFa
 
 ```html
-<div itemprop="review" itemscope itemtype="http://schema.org/Review">
-    <span itemprop="name">[review title/summary]</span> - by
-    <span itemprop="author">[name of reviewer]</span>,
-    <meta itemprop="datePublished" content="[date in ISO format e.g. 2012-04-15]">April 15th, 2012
-    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-        <meta itemprop="worstRating" content="[lowest possible rating]">
-        <span itemprop="ratingValue">[rating given by reviewer]</span>/
-        <span itemprop="bestRating">[highest possible rating]</span>stars
-    </div>
-    <span itemprop="description">[The actual user review text]</span>
-</div>
+<html>
+<head>
+    ...
+</head>
+<body vocab="http://purl.org/dc/terms/">
+...
+<h2 property="title">The Trouble with Bob</h2>
+<p>Date: <span property="created">2011-09-10</span></p>
+...
+<p>All content on this site is licensed under
+    <a property="http://creativecommons.org/ns#license" href="http://creativecommons.org/licenses/by/3.0/">
+        a Creative Commons License</a>. ©2011 Alice Birpemswick.</p>
+</body>
+</html>
 ```
+
+--
+
+See [The Open Graph protocol](https://ogp.me/)
 
 ---
 
 # LINKS Y BIBLIOGRAFÍA
 
 - JSON-LD https://json-ld.org/
-- Microdata https://www.w3.org/TR/microdata/
 - RDFa https://rdfa.info/
+- The Open Graph protocol https://ogp.me/
 - https://builtvisible.com/micro-data-schema-org-guide-generating-rich-snippets/
 - https://developers.google.com/search/docs/guides/intro-structured-data
+- https://search.google.com/test/rich-results
