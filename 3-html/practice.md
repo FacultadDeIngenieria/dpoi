@@ -1,10 +1,10 @@
 ---
-title: Práctica 1 - HTML
+title: Práctica - HTML
 layout: practice
 permalink: /practice/html
 ---
 
-# Práctica 1: HTML
+# Práctica: HTML
 
 ## Crear una página *concepts.html* que contenga:
 1. Un indice apuntando al resto de las secciones y sus sub-secciones.

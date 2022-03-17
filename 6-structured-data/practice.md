@@ -1,10 +1,10 @@
 ---
-title: Práctica 2 - Scrapping
+title: Práctica - Scrapping
 layout: practice
 permalink: /practice/scrapping
 ---
 
-# Práctica 5: Scrapping
+# Práctica: Scrapping
 
 ## Enunciado:
 Implementar un structured data scrapper que retorne un **json-ld** con la data de una página dada.

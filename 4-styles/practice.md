@@ -1,12 +1,12 @@
 ---
-title: Práctica 2 - CSS
+title: Práctica - CSS
 layout: practice
 permalink: /practice/styles
 ---
 
-# Práctica 2: CSS
+# Práctica: CSS
 
-Darle estilo a las páginas del TP1 sobre (X)HTML:
+Darle estilo a las páginas de la práctica HTML:
 
 1. Crear *theme.css* para darle un estilo general a la páginas (títulos, inputs, botones, links, listados, tablas, etc).
 2. Crear *style.css* para alinear los labels e inputs del formulario (como si fuera una tabla).
