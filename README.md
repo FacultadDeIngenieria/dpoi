@@ -5,8 +5,8 @@
 1. [Historia de la web](history) (09/03/2022)
 2. [Entidades Principales de la Web](entities) (09/03/2022)
 3. [HTML](html) (09/03/2022)
-4. [CSS](styles) (09/03/2022)
-5. [Structured Data](structured-data) (16/03/2022)
+4. [Structured Data](structured-data) (16/03/2022)
+5. [CSS](styles) (31/03/2022)
 <!-- 6. [JS](js) (25/03/2020) -->
 
 ## Lecturas Adicionales:
@@ -20,8 +20,8 @@
 ## Trabajos Prácticos:
 
 1. [HTML](practice/html) (09/03/2022)
-2. [CSS](practice/styles) (09/03/2022)
-3. [Scrapping](practice/scrapping)(16/03/2022)
+2. [Scrapping](practice/scrapping)(16/03/2022)
+3. [CSS](practice/styles) (31/03/2022)
 <!-- 3. [JS]&#40;practice/js&#41; &#40;25/03/2020&#41; -->
 <!-- 4. [JS++]&#40;practice/js++&#41; &#40;01/04/2020&#41; -->
 
