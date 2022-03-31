@@ -9,7 +9,7 @@ permalink: /practice/styles
 Darle estilo a las páginas de la práctica HTML:
 
 1. Crear *theme.css* para darle un estilo general a la páginas (títulos, inputs, botones, links, listados, tablas, etc).
-2. Crear *style.css* para alinear los labels e inputs del formulario (como si fuera una tabla).
+2. Crear *style.css* para alinear los labels e inputs del formulario (como si fuera una tabla). Esto debera ser "responsive" y el label e input deberian pasar a diferentes lienas en bajas resoluciones. 
 3. Crear *print.css* con `media="print"` que esconda el título y la lista de navegación.
 4. Crear dos layouts diferentes para la misma página html:
    1. *vertital.css* que este centrado y tenga un ancho fijo, con este formato: ![](../4-styles/tp-horizontal.png)
@@ -23,3 +23,5 @@ Para users.html, un link a la tabla y otro al formulario.
 - No se permite el uso de tags para presentación.
 - El HTML usado debe ser el mismo para los diferentes layouts (solo cambios *minimos*)
 - Las páginas deben ser validadas usando el W3C validator (html y css).
+- El formulario debera ser "responsive"
+ 
