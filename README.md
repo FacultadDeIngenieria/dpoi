@@ -7,14 +7,14 @@
 3. [HTML](html) (09/03/2022)
 4. [Structured Data](structured-data) (16/03/2022)
 5. [CSS](styles) (31/03/2022)
-<!-- 6. [JS](js) (25/03/2020) -->
+6. [JS](js) (21/04/2020)
 
 ## Lecturas Adicionales:
 
 1. [Life of a request](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url) 
-<!-- 2. [Understanding Resource Timing]&#40;https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing&#41; -->
-<!-- 2. [HTML tags]&#40;http://www.w3schools.com/tags&#41; -->
-<!-- 3. [To close or not to close]&#40;http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html&#41; -->
+2. [Understanding Resource Timing]&#40;https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing&#41;
+2. [HTML tags]&#40;http://www.w3schools.com/tags&#41;
+3. [To close or not to close]&#40;http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html&#41;
 <!-- 4. [REST API best practices]&#40;https://www.merixstudio.com/blog/best-practices-rest-api-development/&#41; -->
 
 ## Trabajos Prácticos:
@@ -22,7 +22,7 @@
 1. [HTML](practice/html) (09/03/2022)
 2. [Scrapping](practice/scrapping)(16/03/2022)
 3. [CSS](practice/styles) (31/03/2022)
-<!-- 3. [JS]&#40;practice/js&#41; &#40;25/03/2020&#41; -->
+3. [JS]&#40;practice/js&#41; &#40;25/03/2020&#41;
 <!-- 4. [JS++]&#40;practice/js++&#41; &#40;01/04/2020&#41; -->
 
 <!-- 6. [RestApi]&#40;practice/restapi&#41; &#40;15/04/2020&#41; -->
