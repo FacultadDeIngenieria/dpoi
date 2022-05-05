@@ -10,14 +10,6 @@
 6. [Reactive](reactive) (07/04/2022)
 7. [JS](js) (21/04/2022)
 
-## Lecturas Adicionales:
-
-1. [Life of a request](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url) 
-2. [Understanding Resource Timing](https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing)
-2. [HTML tags](http://www.w3schools.com/tags)
-3. [To close or not to close](http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html)
-<!-- 4. [REST API best practices](https://www.merixstudio.com/blog/best-practices-rest-api-development/) -->
-
 ## Trabajos Prácticos:
 
 1. [HTML](practice/html) (09/03/2022)
@@ -43,6 +35,14 @@
 <!-- 7. Rxjs -->
 <!-- 8. GraphQL -->
 <!-- 9. Cloud service -->
+
+## Lecturas Adicionales:
+
+1. [Life of a request](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url)
+2. [Understanding Resource Timing](https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing)
+2. [HTML tags](http://www.w3schools.com/tags)
+3. [To close or not to close](http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html)
+<!-- 4. [REST API best practices](https://www.merixstudio.com/blog/best-practices-rest-api-development/) -->
 
 ---
 
