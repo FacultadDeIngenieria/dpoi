@@ -17,6 +17,7 @@
 3. [CSS](practice/styles) (31/03/2022)
 4. [Reactive](practice/reactive) (07/04/2022)
 5. [JS](practice/js) (21/04/2022)
+6. [Batalla Naval](practice/papoy) (12/05/2022)
 <!-- 4. [JS++](practice/js++) (01/04/2020) -->
 
 <!-- 6. [RestApi](practice/restapi) (15/04/2020) -->
