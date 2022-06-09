@@ -51,14 +51,14 @@ Crear un juego online para jugar a la batalla naval.
   - Estados del juego.
   - Sincronización de turnos.
   - Prototipo de batalla.
-6. 16/06
+<!--6. 16/06
   - Batalla.
 7. 17/06
   - Finalización.
 8. 23/06
   - Deployment.
 9. 30/06
-  - Presentación.
+  - Presentación. -->
 
 
 ## Requerimientos:
