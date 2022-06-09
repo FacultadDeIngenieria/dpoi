@@ -47,6 +47,19 @@ Crear un juego online para jugar a la batalla naval.
   - Prototipo de mensajería para el juego, donde se conecte a dos usuarios por websockets y estos puedan mensajearse entre si.
 3. 02/06
   - Preparación. Ubicación de flota en el tablero.
+4. 09/06
+  - Estados del juego.
+  - Sincronización de turnos.
+  - Prototipo de batalla.
+6. 16/06
+  - Batalla.
+7. 17/06
+  - Finalización.
+8. 23/06
+  - Deployment.
+9. 30/06
+  - Presentación.
+
 
 ## Requerimientos:
 
