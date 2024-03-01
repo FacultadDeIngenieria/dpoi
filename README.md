@@ -1,29 +1,28 @@
+<!-- https://docs.github.com/es/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll -->
 # Diseño y Programación Orientado a Internet
 
 ## Presentaciones:
 
-1. [Historia de la web](history) (09/03/2022)
-2. [Entidades Principales de la Web](entities) (09/03/2022)
-3. [HTML](html) (09/03/2022)
-4. [Structured Data](structured-data) (16/03/2022)
-5. [CSS](styles) (31/03/2022)
-6. [Reactive](reactive) (07/04/2022)
-7. [JS](js) (21/04/2022)
+1. [Historia de la web](history)
+2. [Entidades Principales de la Web](entities)
+3. [HTML](html)
+<!--4. [CSS](styles) -->
+<!--5. [Reactive](reactive) -->
+<!--6. [JS](js) -->
+<!--?. [Structured Data](structured-data) -->
 
 ## Trabajos Prácticos:
 
-1. [HTML](practice/html) (09/03/2022)
-2. [Scrapping](practice/scrapping)(16/03/2022)
-3. [CSS](practice/styles) (31/03/2022)
-4. [Reactive](practice/reactive) (07/04/2022)
-5. [JS](practice/js) (21/04/2022)
-6. [Batalla Naval](practice/papoy) (12/05/2022)
-<!-- 4. [JS++](practice/js++) (01/04/2020) -->
-
-<!-- 6. [RestApi](practice/restapi) (15/04/2020) -->
-<!-- 6. [Visualization](practice/visualization) (skip) -->
-<!-- 7. [Serverless](practice/serverless) (22/04/2020) -->
-<!-- 8. [Batalla Naval](practice/papoy) (05/05/2020) -->
+1. [HTML](practice/html)
+<!-- 2. [Scrapping](practice/scrapping) -->
+<!-- 3. [CSS](practice/styles)  -->
+<!-- 4. [Reactive](practice/reactive) -->
+<!-- 5. [JS](practice/js)  -->
+<!-- 6. [JS++](practice/js++) -->
+<!-- 7. [RestApi](practice/restapi) -->
+<!-- 8. [Serverless](practice/serverless) -->
+<!-- 9. [Batalla Naval](practice/papoy) -->
+<!-- ?. [Visualization](practice/visualization) -->
 
 
 <!-- ## Presentaciones -->
@@ -54,4 +53,4 @@
 ## Cátedra:
 
 * [Agustín López Gabeiras](//github.com/agustinlg)
-* [Pedro Colunga](//github.com/pcolunga)
+* [Rodrigo Pazos](//github.com/RodPazos)
