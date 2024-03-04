@@ -36,12 +36,13 @@
 <!-- 8. GraphQL -->
 <!-- 9. Cloud service -->
 
-## Lecturas Adicionales:
+## Lecturas y videos Adicionales:
 
 1. [Life of a request](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url)
 2. [Understanding Resource Timing](https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing)
 2. [HTML tags](http://www.w3schools.com/tags)
-3. [To close or not to close](http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html)
+3. [HTTP & HTML](https://www.youtube.com/watch?v=kBXQZMmiA4s)
+<!-- 3. [To close or not to close](http://www.colorglare.com/2014/02/03/to-close-or-not-to-close.html) -->
 <!-- 4. [REST API best practices](https://www.merixstudio.com/blog/best-practices-rest-api-development/) -->
 
 ---
