@@ -6,7 +6,7 @@
 1. [Historia de la web](history)
 2. [Entidades Principales de la Web](entities)
 3. [HTML](html)
-<!--4. [CSS](styles) -->
+4. [CSS](https://docs.google.com/presentation/d/1JdnY5TeHZlFTRQZf4UGqXoW4w7UM0i8T6kAlwHrgmK8/edit)
 <!--5. [Reactive](reactive) -->
 <!--6. [JS](js) -->
 <!--?. [Structured Data](structured-data) -->
@@ -14,8 +14,8 @@
 ## Trabajos Prácticos:
 
 1. [HTML](practice/html)
-<!-- 2. [Scrapping](practice/scrapping) -->
-<!-- 3. [CSS](practice/styles)  -->
+2. [CSS](practice/styles)
+<!-- 3. [Scrapping](practice/scrapping) -->
 <!-- 4. [Reactive](practice/reactive) -->
 <!-- 5. [JS](practice/js)  -->
 <!-- 6. [JS++](practice/js++) -->
