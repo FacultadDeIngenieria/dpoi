@@ -7,18 +7,19 @@
 2. [Entidades Principales de la Web](entities)
 3. [HTML](html)
 4. [CSS](https://docs.google.com/presentation/d/1JdnY5TeHZlFTRQZf4UGqXoW4w7UM0i8T6kAlwHrgmK8/edit)
-<!--5. [Reactive](reactive) -->
-<!--6. [JS](js) -->
+5. [JS](https://docs.google.com/presentation/d/1P-Jf6gOVHsLrgL1TpIcoGhiRM6qTxD6tzC95hpJ9dAw/edit)
+<!--6. [Reactive](reactive) -->
 <!--?. [Structured Data](structured-data) -->
 
 ## Trabajos Prácticos:
 
 1. [HTML](practice/html)
 2. [CSS](practice/styles)
-<!-- 3. [Scrapping](practice/scrapping) -->
-<!-- 4. [Reactive](practice/reactive) -->
-<!-- 5. [JS](practice/js)  -->
-<!-- 6. [JS++](practice/js++) -->
+3. [JS](practice/js)
+<!-- 3. [JS](practice/js)  -->
+<!-- 4. [JS++](practice/js++) -->
+<!-- 5. [Scrapping](practice/scrapping) -->
+<!-- 6. [Reactive](practice/reactive) -->
 <!-- 7. [RestApi](practice/restapi) -->
 <!-- 8. [Serverless](practice/serverless) -->
 <!-- 9. [Batalla Naval](practice/papoy) -->
