@@ -8,7 +8,9 @@
 3. [HTML](html)
 4. [CSS](https://docs.google.com/presentation/d/1JdnY5TeHZlFTRQZf4UGqXoW4w7UM0i8T6kAlwHrgmK8/edit)
 5. [JS](https://docs.google.com/presentation/d/1P-Jf6gOVHsLrgL1TpIcoGhiRM6qTxD6tzC95hpJ9dAw/edit)
-<!--6. [Reactive](reactive) -->
+6. [REST & GraphQL APIs](https://docs.google.com/presentation/d/1s4Doh8gdUjV8h4wM6gUsP4ZS98IZ47w8HAI2tV4mFW0/edit)
+<!--5. [Reactive](reactive) -->
+<!--6. [JS](js) -->
 <!--?. [Structured Data](structured-data) -->
 
 ## Trabajos Prácticos:
@@ -16,6 +18,7 @@
 1. [HTML](practice/html)
 2. [CSS](practice/styles)
 3. [JS](practice/js)
+4. [Rest & GraphQL APIs](practice/restapi) -->
 <!-- 3. [JS](practice/js)  -->
 <!-- 4. [JS++](practice/js++) -->
 <!-- 5. [Scrapping](practice/scrapping) -->

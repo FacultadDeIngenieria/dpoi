@@ -5,15 +5,16 @@ permalink: /practice/restapi
 api: api.json
 ---
 
-# Práctica 6: RestApi
+# Práctica 6: RestApi & GraphQL
 
 ## Enunciado:
 
-1. Extraer structured data de distintas páginas de manera genérica utilizando lo realizado en la práctica 5.
-2. Guardar la información json obtenida de forma permanente en una base de datos (Ej. DynamoDB, MongoDB, Cassandra).
-3. Exponer esos datos a través de un api rest.
+Bajarse la DB de IMDB https://datasets.imdbws.com/ e importar cada parte en una tabla distinta DynamoDB (pueden ver el detalle del Schema: https://developer.imdb.com/non-commercial-datasets/).
+Por cada entidad (7 en total), exponer tanto el listado paginado y un unico item por su identifier (7x2 en total).
 
-## RestApi
+Exponer las entidades desde una REST API y una GraphQL API, en dos implementaciones: una monolítica y otra con microservicios. Dando un total de 4 implementaciones.
+
+Recomendamos el uso de NodeJS+Express para las REST APIs y de Apollo para GraphQL: https://www.apollographql.com/docs/federation/.
 
 ```raml
 {% include_relative {{page.api}} %}
