@@ -18,7 +18,7 @@
 1. [HTML](practice/html)
 2. [CSS](practice/styles)
 3. [JS](practice/js)
-4. [Rest & GraphQL APIs](practice/restapi) -->
+4. [Rest & GraphQL APIs](practice/restapi)
 <!-- 3. [JS](practice/js)  -->
 <!-- 4. [JS++](practice/js++) -->
 <!-- 5. [Scrapping](practice/scrapping) -->
